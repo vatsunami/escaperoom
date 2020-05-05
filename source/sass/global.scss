@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $raleway-medium;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+  color: $color-description;
+}
+
+* {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  border-style: none;
+}
