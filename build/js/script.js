@@ -89,7 +89,7 @@
 
 
 (function modalCity () {
-  var ESC_KEYCODE = 27;
+  let ESC_KEYCODE = 27;
   let modal = document.querySelector(".modal-city");
 
   if (modal) {
@@ -115,8 +115,8 @@
       document.removeEventListener('keydown', onEscPress);
     };
 
-    var onOverlayClick = function (evt) {
-      var clickCoordinates = {
+    let onOverlayClick = function (evt) {
+      let clickCoordinates = {
         x: evt.clientX,
         y: evt.clientY
       };
@@ -129,7 +129,7 @@
       }
     };
 
-    var onEscPress = function (evt) {
+    let onEscPress = function (evt) {
       if (evt.keyCode === ESC_KEYCODE) {
         hideModal();
       }
@@ -152,7 +152,7 @@
 
 
 (function modalQustion () {
-  var ESC_KEYCODE = 27;
+  let ESC_KEYCODE = 27;
   let modal = document.querySelector(".modal-question");
 
   if (modal) {
@@ -178,8 +178,8 @@
       document.removeEventListener('keydown', onEscPress);
     };
 
-    var onOverlayClick = function (evt) {
-      var clickCoordinates = {
+    let onOverlayClick = function (evt) {
+      let clickCoordinates = {
         x: evt.clientX,
         y: evt.clientY
       };
@@ -192,7 +192,7 @@
       }
     };
 
-    var onEscPress = function (evt) {
+    let onEscPress = function (evt) {
       if (evt.keyCode === ESC_KEYCODE) {
         hideModal();
       }
