@@ -1,0 +1,23 @@
+.modal-question__container {
+  width: 480px;
+  padding: 33px 32px 32px;
+}
+
+.modal-question__title {
+  margin: 0;
+  margin-bottom: 39px;
+}
+
+
+@media (max-width: $mobile-width) {
+  .modal-question__container {
+    width: 100%;
+    height: 100%;
+    padding: 32px 16px;
+  }
+
+  .modal-question__button-close {
+    top: 26px;
+    right: 3px;
+  }
+}

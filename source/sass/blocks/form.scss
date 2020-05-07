@@ -1,0 +1,114 @@
+.form__fields {
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 32px;
+  padding: 0;
+  padding-right: 16px;
+  list-style: none;
+}
+
+.form__field {
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+}
+
+.form__field label {
+  display: block;
+  margin-bottom: 14px;
+  font-family: $raleway-medium;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 23px;
+}
+
+.form__field input,
+.form__field textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 15px 10px 16px 23px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-description;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 3px;
+}
+
+.form__field input::placeholder,
+.form__field textarea::placeholder {
+  color: $color-description;
+  opacity: 0.64;
+}
+
+.form__field textarea {
+  height: 120px;
+  padding-top: 13px;
+  resize: none;
+}
+
+.form__button-submit {
+  box-sizing: border-box;
+  display: block;
+  width: 219px;
+  margin: 0 auto 22px;
+  padding: 15px 5px 16px 5px;
+  font-family: $raleway-extrabold;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background-color: $color-disabled;
+  border-radius: 47px;
+  border: 0;
+  cursor: pointer;
+}
+
+.form__eula label {
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  padding-left: 24px;
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: $color-orange;
+    border-radius: 4px;
+    opacity: 0.4;
+  }
+}
+
+.form__eula input:checked ~ label::before {
+  opacity: 1;
+}
+
+.form__eula a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+@media (max-width: $mobile-width) {
+  .form__fields {
+    padding-right: 8px;
+  }
+
+  .form__field label {
+    margin-bottom: 13px;
+  }
+
+  .form__field textarea {
+    padding-top: 16px;
+  }
+}

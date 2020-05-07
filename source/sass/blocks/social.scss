@@ -1,0 +1,52 @@
+.social {
+  position: absolute;
+  left: 32px;
+  bottom: 17px;
+  z-index: 3;
+  width: 70px;
+}
+
+.social__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.social__item {
+  margin: 0 7px 7px 0;
+}
+
+.social__link {
+  display: block;
+}
+
+.social__link,
+.social__icon {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: $tablet-width) {
+  .social {
+    display: none;
+    left: 16px;
+    bottom: 19px;
+    width: 104px;
+
+    &--show {
+      display: block;
+    }
+  }
+
+  .social__link,
+  .social__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .social__item {
+    margin: 0 16px 16px 0;
+  }
+}

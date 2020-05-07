@@ -1,0 +1,13 @@
+.page-content {
+  position: fixed;
+  top: 109px;
+  overflow-y: scroll;
+  width: 100%;
+  height: calc(100% - 109px);
+}
+
+@media (max-width: $mobile-width) {
+  .page-content {
+    top: 83px;
+  }
+}

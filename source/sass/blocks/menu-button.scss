@@ -1,0 +1,33 @@
+.menu-button {
+  display: none;
+}
+
+@media (max-width: $tablet-width) {
+  .menu-button {
+    box-sizing: border-box;
+    display: block;
+    width: 80px;
+    height: 40px;
+    padding: 13px 3px 10px 3px;
+    font-family: $raleway-semibold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    color: #f0f0f0;
+    text-transform: uppercase;
+    text-align: left;
+    background-image: url("../img/icon-menu-opened.svg");
+    background-repeat: no-repeat;
+    background-size: 16px 16px;
+    background-position: top 13px right 3px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    &--closed {
+      background-image: url("../img/icon-menu-closed.svg");
+      background-size: 20px 14px;
+      background-position: top 15px right 2px;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.question {
+  position: absolute;
+  right: 32px;
+  bottom: 26px;
+  display: inline-block;
+  padding-bottom: 2px;
+  font-family: $raleway-medium;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  color: #e6e6e6;
+  text-decoration: none;
+  border-bottom: 1px dashed #e6e6e6;
+  z-index: 3;
+}
+
+@media (max-width: $tablet-width) {
+  .question {
+    display: none;
+    padding-bottom: 3px;
+    right: 17px;
+    bottom: 42px;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.03em;
+
+    &--show {
+      display: block;
+    }
+  }
+}

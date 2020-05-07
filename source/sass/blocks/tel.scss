@@ -1,0 +1,16 @@
+.tel {
+  width: 129px;
+  padding-top: 4px;
+  font-family: $raleway-semibold;
+  font-size: 14px;
+  line-height: 15px;
+  font-feature-settings: "pnum" on, "lnum" on;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: $tablet-width) {
+  .tel {
+    padding-top: 0;
+    padding-left: 6px;
+  }
+}
