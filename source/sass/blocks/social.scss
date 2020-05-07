@@ -1,8 +1,8 @@
 .social {
-  position: absolute;
-  left: 32px;
-  bottom: 17px;
-  z-index: 3;
+  // position: absolute;
+  // left: 32px;
+  // bottom: 17px;
+  // z-index: 3;
   width: 70px;
 }
 
@@ -30,14 +30,9 @@
 
 @media (max-width: $tablet-width) {
   .social {
-    display: none;
-    left: 16px;
+    // left: 16px;
     bottom: 19px;
     width: 104px;
-
-    &--show {
-      display: block;
-    }
   }
 
   .social__link,

@@ -15,18 +15,15 @@
   let pageHeader = document.querySelector(".page-header");
 
   if (pageHeader) {
-    let body = document.body;
     let container = pageHeader.querySelector(".page-header__container");
     let menuButton = container.querySelector(".menu-button");
     let menu = container.querySelector(".menu");
     let mainNav = menu.querySelector(".main-nav");
     let telNumber = menu.querySelector(".tel");
     let location = menu.querySelector(".location");
-    let social = document.querySelector(".social");
-    let question = document.querySelector(".question");
+    let pageFooter = document.querySelector(".page-footer");
 
     function openMenu () {
-      body.classList.add("noscroll--header-menu");
       container.classList.remove("page-header__container--closed");
       menu.classList.remove("menu--closed");
       menuButton.classList.remove("menu-button--closed");
@@ -34,17 +31,12 @@
       telNumber.classList.remove("tel--closed");
       location.classList.remove("location--closed");
 
-      if (social) {
-        social.classList.add("social--show");
-      }
-
-      if (question) {
-        question.classList.add("question--show");
+      if (pageFooter) {
+        pageFooter.classList.add("page-footer--show");
       }
     };
 
     function closeMenu () {
-      body.classList.remove("noscroll--header-menu");
       container.classList.add("page-header__container--closed");
       menu.classList.add("menu--closed");
       menuButton.classList.add("menu-button--closed");
@@ -52,12 +44,8 @@
       telNumber.classList.add("tel--closed");
       location.classList.add("location--closed");
 
-      if (social) {
-        social.classList.remove("social--show");
-      }
-
-      if (question) {
-        question.classList.remove("question--show");
+      if (pageFooter) {
+        pageFooter.classList.remove("page-footer--show");
       }
     };
 

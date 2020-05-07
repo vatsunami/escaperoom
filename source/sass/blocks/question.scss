@@ -1,9 +1,6 @@
 .question {
-  position: absolute;
-  right: 32px;
-  bottom: 26px;
-  display: inline-block;
-  padding-bottom: 2px;
+  padding: 6px 0 2px;
+  align-self: flex-start;
   font-family: $raleway-medium;
   font-weight: 500;
   font-size: 12px;
@@ -16,16 +13,9 @@
 
 @media (max-width: $tablet-width) {
   .question {
-    display: none;
     padding-bottom: 3px;
-    right: 17px;
-    bottom: 42px;
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.03em;
-
-    &--show {
-      display: block;
-    }
   }
 }
