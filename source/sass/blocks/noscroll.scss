@@ -1,0 +1,7 @@
+.noscroll {
+  &--header-menu,
+  &--modal-question,
+  &--modal-city {
+    overflow-y: hidden;
+  }
+}

@@ -1,27 +1,31 @@
 .page-wrapper {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 100%;
   min-height: 100%;
-  height: 100%;
-  background-image: url("../img/background-main-desktop@1x.jpg");
-  background-color: #1c1c1c;
   background-repeat: no-repeat;
-  background-position: 0 0;
   background-size: cover;
-  background-attachment: fixed;
-  z-index: -1;
-}
+  background-position: top 0 left 0;
+  background-color: #1c1c1c;
 
-@media (max-width: $tablet-width) {
-  .page-wrapper {
-    background-image: url("../img/background-main-tablet@1x.jpg");
-    background-position: center;
+  &--maniac {
+    background-image: url("../img/bg-maniac-desktop@1x.jpg");
   }
-}
 
-@media (max-width: $mobile-width) {
-  .page-wrapper {
-    background-image: url("../img/background-main-mobile@1x.jpg");
+  &--mansion {
+    background-image: url("../img/bg-mansion-desktop@1x.jpg");
+  }
+
+  &--ritual {
+    background-image: url("../img/bg-ritual-desktop@1x.jpg");
+  }
+
+  &--experiment {
+    background-image: url("../img/bg-experiment-desktop@1x.jpg");
+  }
+
+  &--promo {
+    background-image: url("../img/background-main-desktop@1x.jpg");
+    background-position: 0 0;
   }
 }

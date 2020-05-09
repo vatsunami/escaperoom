@@ -1,0 +1,226 @@
+.promo-quest {
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  width: 100%;
+  min-height: 768px;
+  height: 100%;
+  background-color: transparent;
+
+  &--maniac {
+    padding-bottom: 247px;
+  }
+
+  &--mansion {
+    padding-bottom: 161px;
+  }
+
+  &--ritual {
+    padding-bottom: 251px;
+  }
+
+  &--experiment {
+    padding-bottom: 201px;
+  }
+}
+
+.promo-quest__container {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.promo-quest__catalog {
+  display: none;
+}
+
+.promo-quest__info {
+  box-sizing: border-box;
+  margin-left: auto;
+  max-width: 846px;
+  width: 100%;
+  padding: 0 80px;
+}
+
+.promo-quest__category {
+  margin: 0;
+  margin-bottom: 11px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $color-orange;
+
+  &--maniac {
+    padding-left: 7px;
+  }
+}
+
+.promo-quest__title {
+  margin: 0;
+  margin-bottom: 28px;
+  font-family: $raleway-black;
+  font-weight: 900;
+  font-size: 92px;
+  line-height: 87px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+
+  &--long {
+    margin: 22px 0;
+  }
+}
+
+.promo-quest__parameters {
+  margin-bottom: 18px;
+  padding-left: 9px;
+}
+
+.promo-quest__description {
+  box-sizing: border-box;
+  max-width: 570px;
+  margin: 0;
+  margin-bottom: 39px;
+  padding-left: 32px;
+  font-size: 15px;
+  line-height: 23px;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.promo-quest__button {
+  margin-left: 34px;
+}
+
+@media (max-width: $tablet-width) {
+  .promo-quest {
+    padding-bottom: 100px;
+  }
+
+  .promo-quest__container {
+    padding: 0;
+  }
+
+  .promo-quest__info {
+    width: 100%;
+    max-width: 570px;
+    margin: 0 auto;
+    padding: 100px 0 38px;
+  }
+
+  .promo-quest__category,
+  .promo-quest__title,
+  .promo-quest__description {
+    padding: 0;
+  }
+
+  .promo-quest__category {
+    &--mansion {
+      margin-bottom: 26px;
+    }
+  }
+
+  .promo-quest__title {
+    max-width: 540px;
+    margin-bottom: 17px;
+    font-family: $raleway-black;
+    font-weight: 900;
+    font-size: 67px;
+    line-height: 80px;
+    letter-spacing: normal;
+
+    &--long {
+      margin-top: 0;
+    }
+
+    &--stairs {
+      max-width: 450px;
+    }
+  }
+
+  .promo-quest__parameters {
+    padding: 0;
+  }
+
+  .promo-quest__description {
+    max-width: none;
+    padding-right: 60px;
+  }
+
+  .promo-quest__button {
+    width: 250px;
+    height: 65px;
+    margin: 0 0 20px;
+    padding: 22px 20px;
+    font-size: 17px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .promo-quest {
+    display: block;
+    height: 100%;
+    min-height: auto;
+    padding-bottom: 0;
+  }
+
+  .promo-quest__catalog {
+    display: inline-block;
+    margin-left: 10px;
+    padding-left: 20px;
+    font-family: $raleway-bold;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    font-feature-settings: "pnum" on, "lnum" on;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #e6e6e6;
+    background-image: url("../img/icon-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
+    background-size: 9px 12px;
+  }
+
+  .promo-quest__info {
+    max-width: 500px;
+    margin: 0;
+    padding: 285px 0 38px;
+
+    &--long-title {
+      padding-top: 178px;
+    }
+
+    &--no-catalog {
+      padding-top: 261px;
+    }
+  }
+
+  .promo-quest__category,
+  .promo-quest__title,
+  .promo-quest__description {
+    box-sizing: border-box;
+    padding: 0 4.444444%;
+  }
+
+  .promo-quest__title {
+    font-size: 42px;
+    line-height: 46px;
+
+    &--stairs {
+      max-width: 350px;
+    }
+  }
+
+  .promo-quest__parameters {
+    margin: 0;
+  }
+
+  .promo-quest__description {
+    margin-bottom: 19px;
+  }
+
+  .promo-quest__button {
+    margin: 0 4.444444% 20px;
+  }
+}

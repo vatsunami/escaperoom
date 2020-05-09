@@ -24,6 +24,7 @@
     let pageFooter = document.querySelector(".page-footer");
 
     function openMenu () {
+      document.body.classList.add("noscroll--header-menu");
       container.classList.remove("page-header__container--closed");
       menu.classList.remove("menu--closed");
       menuButton.classList.remove("menu-button--closed");
@@ -37,6 +38,7 @@
     };
 
     function closeMenu () {
+      document.body.classList.remove("noscroll--header-menu");
       container.classList.add("page-header__container--closed");
       menu.classList.add("menu--closed");
       menuButton.classList.add("menu-button--closed");
@@ -86,6 +88,7 @@
     let buttonClose = modal.querySelector(".modal__button-close");
 
     function showModal () {
+      document.body.classList.add("noscroll--modal-city");
       modal.classList.remove("modal--closed");
       buttonClose.focus();
       buttonOpen.removeEventListener("click", onButtonOpenClick);
@@ -95,6 +98,7 @@
     };
 
     function hideModal () {
+      document.body.classList.remove("noscroll--modal-city");
       modal.classList.add("modal--closed");
       buttonOpen.focus();
       buttonOpen.addEventListener("click", onButtonOpenClick);
@@ -149,6 +153,7 @@
     let buttonClose = modal.querySelector(".modal__button-close");
 
     function showModal () {
+      document.body.classList.add("noscroll--modal-question");
       modal.classList.remove("modal--closed");
       buttonClose.focus();
       buttonOpen.removeEventListener("click", onButtonOpenClick);
@@ -158,6 +163,7 @@
     };
 
     function hideModal () {
+      document.body.classList.remove("noscroll--modal-question");
       modal.classList.add("modal--closed");
       buttonOpen.focus();
       buttonOpen.addEventListener("click", onButtonOpenClick);

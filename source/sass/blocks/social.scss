@@ -1,8 +1,4 @@
 .social {
-  // position: absolute;
-  // left: 32px;
-  // bottom: 17px;
-  // z-index: 3;
   width: 70px;
 }
 
@@ -30,7 +26,6 @@
 
 @media (max-width: $tablet-width) {
   .social {
-    // left: 16px;
     bottom: 19px;
     width: 104px;
   }
