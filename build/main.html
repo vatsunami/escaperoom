@@ -8,7 +8,7 @@
   <title>Escape Room</title>
   <link rel="stylesheet" href="css/style.min.css">
 </head>
-<body class="noscroll--header-menu">
+<body>
   <div style="display:none">
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-arrow" viewBox="0 0 8 12">
 <path d="M7 1L1 6L7 11" stroke="white"></path>
@@ -41,8 +41,8 @@
   </div>
 
   <div class="page-wrapper page-wrapper--promo">
-    <header class="page-header">
-      <div class="page-header__wrapper">
+    <div class="page-content">
+      <header class="page-header">
         <div class="page-header__container">
           <div class="page-header__top">
             <a class="logo">
@@ -53,7 +53,7 @@
             </a>
             <button class="menu-button">Меню</button>
           </div>
-          <div class="page-header__menu menu">
+          <div class="page-header__menu menu menu--active-js">
             <nav class="menu__main-nav main-nav">
               <ul class="main-nav__list">
                 <li class="main-nav__item"><a class="main-nav__link" href="#">Квесты</a></li>
@@ -72,24 +72,48 @@
               </a>
               <span class="menu__tel tel">8 (383) 284 01 60</span>
             </div>
+            <div class="menu__bottom">
+              <div class="social">
+                <b class="visually-hidden">Мы в социальных сетях</b>
+                <ul class="social__list">
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="visually-hidden">Instagram</span>
+                      <svg class="social__icon social__icon--instagram" width="28" height="28" viewBox="0 0 28 28">
+                        <use xlink:href="#icon-social-insta"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="visually-hidden">Vkontakte</span>
+                      <svg class="social__icon social__icon--vk" width="28" height="28" viewBox="0 0 28 28">
+                        <use xlink:href="#icon-social-vk"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <a class="page-footer__question question" href="#">Задать вопрос</a>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <main class="page-inner">
-      <div class="page-inner__container">
-        <section class="promo">
-          <div class="promo__container">
-            <h2 class="promo__title">Лучшие квесты в&nbsp;Новосибирске</h2>
-            <p class="promo__text">Надоело проводить свободное время лежа на диване?
-              Игровые площадки questroom на целый час погружают вас в мир незабываемых авантюр.
-              Ищите подсказки, решайте головоломки и находите выход из комнаты!</p>
-            <a class="promo__button button" href="#">Выбрать квест</a>
-          </div>
-        </section>
-      </div>
-    </main>
+      <main class="page-inner">
+        <div class="page-inner__container">
+          <section class="promo">
+            <div class="promo__container">
+              <h2 class="promo__title">Лучшие квесты в&nbsp;Новосибирске</h2>
+              <p class="promo__text">Надоело проводить свободное время лежа на диване?
+                Игровые площадки questroom на целый час погружают вас в мир незабываемых авантюр.
+                Ищите подсказки, решайте головоломки и находите выход из комнаты!</p>
+              <a class="promo__button button" href="#">Выбрать квест</a>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
 
     <footer class="page-footer">
       <div class="page-footer__container">
@@ -171,7 +195,9 @@
               <textarea name="question" placeholder="Начните вводить …" rows="4" cols="40" id="message"></textarea>
             </li>
           </ul>
-          <button class="form__button-submit" type="submit">Отправить вопрос</button>
+          <div class="form__button-wrapper">
+            <button class="form__button" type="submit">Отправить вопрос</button>
+          </div>
           <div class="form__eula">
             <input class="visually-hidden" type="checkbox" id="eula">
             <label for="eula">Я согласен с <a class="form__eula-link" href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>

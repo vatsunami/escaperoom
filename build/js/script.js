@@ -10,6 +10,8 @@
   };
 })();
 
+document.querySelector(".page-inner").classList.add("page-inner--active-js");
+
 
 (function headerMenu () {
   let pageHeader = document.querySelector(".page-header");
@@ -25,7 +27,10 @@
 
     function openMenu () {
       document.body.classList.add("noscroll--header-menu");
+      pageHeader.classList.add("page-header--active-js");
+      container.classList.add("page-header__container--active-js");
       container.classList.remove("page-header__container--closed");
+      menu.classList.add("menu--active-js");
       menu.classList.remove("menu--closed");
       menuButton.classList.remove("menu-button--closed");
       mainNav.classList.remove("main-nav--closed");
@@ -39,7 +44,10 @@
 
     function closeMenu () {
       document.body.classList.remove("noscroll--header-menu");
+      pageHeader.classList.remove("page-header--active-js");
+      container.classList.remove("page-header__container--active-js");
       container.classList.add("page-header__container--closed");
+      menu.classList.remove("menu--active-js");
       menu.classList.add("menu--closed");
       menuButton.classList.add("menu-button--closed");
       mainNav.classList.add("main-nav--closed");
@@ -80,6 +88,7 @@
 
 (function modalCity () {
   let ESC_KEYCODE = 27;
+  let pageHeader = document.querySelector(".page-header");
   let modal = document.querySelector(".modal-city");
 
   if (modal) {
@@ -90,6 +99,7 @@
     function showModal () {
       document.body.classList.add("noscroll--modal-city");
       modal.classList.remove("modal--closed");
+      pageHeader.classList.add("page-header--modal-opened");
       buttonClose.focus();
       buttonOpen.removeEventListener("click", onButtonOpenClick);
       buttonClose.addEventListener("click", onButtonCloseClick);
@@ -100,6 +110,7 @@
     function hideModal () {
       document.body.classList.remove("noscroll--modal-city");
       modal.classList.add("modal--closed");
+      pageHeader.classList.remove("page-header--modal-opened");
       buttonOpen.focus();
       buttonOpen.addEventListener("click", onButtonOpenClick);
       buttonClose.removeEventListener("click", onButtonCloseClick);
@@ -130,7 +141,6 @@
     function onButtonOpenClick (evt) {
       evt.preventDefault();
       showModal()
-      console.log("click");
     };
 
     function onButtonCloseClick (evt) {
@@ -148,12 +158,14 @@
   let modal = document.querySelector(".modal-question");
 
   if (modal) {
+    let pageHeader = document.querySelector(".page-header");
     let container = modal.querySelector(".modal-question__container");
     let buttonOpen = document.querySelector(".question");
     let buttonClose = modal.querySelector(".modal__button-close");
 
     function showModal () {
       document.body.classList.add("noscroll--modal-question");
+      pageHeader.classList.add("page-header--modal-opened");
       modal.classList.remove("modal--closed");
       buttonClose.focus();
       buttonOpen.removeEventListener("click", onButtonOpenClick);
@@ -164,6 +176,7 @@
 
     function hideModal () {
       document.body.classList.remove("noscroll--modal-question");
+      pageHeader.classList.remove("page-header--modal-opened");
       modal.classList.add("modal--closed");
       buttonOpen.focus();
       buttonOpen.addEventListener("click", onButtonOpenClick);

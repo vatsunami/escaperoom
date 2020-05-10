@@ -1,15 +1,7 @@
 .page-header {
-  min-height: 109px;
   z-index: 10;
+  min-height: 109px;
 }
-
-// .page-header__wrapper {
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   z-index: 10;
-// }
 
 .page-header__container {
   box-sizing: border-box;
@@ -32,25 +24,38 @@
 @media (max-width: $tablet-width) {
   .page-header {
     min-height: 105px;
+
+    &--active-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: scroll;
+    }
+
+    &--modal-opened {
+      overflow-y: hidden;
+    }
   }
 
   .page-header__container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    min-height: 640px;
     padding: 0;
     background-image: linear-gradient(163.84deg, #633c0f -68.98%, #24150e 75.12%, #1a140d 132.97%);
     overflow-y: scroll;
 
     &--closed {
       position: static;
-      top: auto;
-      left: auto;
-      height: auto;
+      min-height: auto;
       background-image: none;
+    }
+
+    &--active-js {
+      height: 100%;
+      min-height: auto;
     }
   }
 

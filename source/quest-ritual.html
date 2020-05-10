@@ -13,8 +13,8 @@
     <include src="build/img/sprite_auto.svg"></include>
   </div>
   <div class="page-wrapper page-wrapper--ritual">
-    <header class="page-header">
-      <div class="page-header__wrapper">
+    <div class="page-content">
+      <header class="page-header">
         <div class="page-header__container">
           <div class="page-header__top">
             <a class="logo">
@@ -25,7 +25,7 @@
             </a>
             <button class="menu-button">Меню</button>
           </div>
-          <div class="page-header__menu menu">
+          <div class="page-header__menu menu menu--active-js">
             <nav class="menu__main-nav main-nav">
               <ul class="main-nav__list">
                 <li class="main-nav__item"><a class="main-nav__link" href="#">Квесты</a></li>
@@ -44,44 +44,68 @@
               </a>
               <span class="menu__tel tel">8 (383) 284 01 60</span>
             </div>
-          </div>
-        </div>
-      </div>
-    </header>
-
-    <main class="page-inner">
-      <div class="page-inner__container">
-        <section class="promo-quest promo-quest--ritual">
-          <div class="promo-quest__container">
-            <a href="catalog.html" class="promo-quest__catalog">Все квесты</a>
-            <div class="promo-quest__info">
-              <div class="promo-quest__header">
-                <p class="promo-quest__category">хоррор, мистика</p>
-                <h2 class="promo-quest__title promo-quest__title--long">Ритуал</h2>
-              </div>
-              <div class="promo-quest__parameters parameters">
-                <ul class="parameters__list">
-                  <li class="parameters__item">
-                    <span class="parameters__data parameters__data--time">60 мин</span>
+            <div class="menu__bottom">
+              <div class="social">
+                <b class="visually-hidden">Мы в социальных сетях</b>
+                <ul class="social__list">
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="visually-hidden">Instagram</span>
+                      <svg class="social__icon social__icon--instagram" width="28" height="28" viewBox="0 0 28 28">
+                        <use xlink:href="#icon-social-insta"></use>
+                      </svg>
+                    </a>
                   </li>
-                  <li class="parameters__item">
-                    <span class="parameters__data parameters__data--person">3-5 чел</span>
-                  </li>
-                  <li class="parameters__item">
-                    <span class="parameters__data parameters__data--puzzle">высокая сложность</span>
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="visually-hidden">Vkontakte</span>
+                      <svg class="social__icon social__icon--vk" width="28" height="28" viewBox="0 0 28 28">
+                        <use xlink:href="#icon-social-vk"></use>
+                      </svg>
+                    </a>
                   </li>
                 </ul>
               </div>
-              <p class="promo-quest__description">Тяжелый воздух угнетает, в ночи вы оказыватесь запертыми в сыром
-                помещении вместе с другими ничего не понимающими жертвами.
-                Сквозь&nbsp;щель в двери вы видите, как некто в капюшоне готовит площадку как будто для проведения
-                мистического обряда. Удастся ли&nbsp;вам&nbsp;выбраться,&nbsp;пока вы не станете жертвой ритуала?</p>
-              <a class="promo-quest__button button" href="#">Забронировать</a>
+              <a class="page-footer__question question" href="#">Задать вопрос</a>
             </div>
           </div>
-        </section>
-      </div>
-    </main>
+        </div>
+      </header>
+
+      <main class="page-inner">
+        <div class="page-inner__container">
+          <section class="promo-quest">
+            <div class="promo-quest__container promo-quest__container--ritual">
+              <a href="catalog.html" class="promo-quest__catalog">Все квесты</a>
+              <div class="promo-quest__info">
+                <div class="promo-quest__header">
+                  <p class="promo-quest__category">хоррор, мистика</p>
+                  <h2 class="promo-quest__title promo-quest__title--long">Ритуал</h2>
+                </div>
+                <div class="promo-quest__parameters parameters">
+                  <ul class="parameters__list">
+                    <li class="parameters__item">
+                      <span class="parameters__data parameters__data--time">60 мин</span>
+                    </li>
+                    <li class="parameters__item">
+                      <span class="parameters__data parameters__data--person">3-5 чел</span>
+                    </li>
+                    <li class="parameters__item">
+                      <span class="parameters__data parameters__data--puzzle">высокая сложность</span>
+                    </li>
+                  </ul>
+                </div>
+                <p class="promo-quest__description">Тяжелый воздух угнетает, в ночи вы оказыватесь запертыми в сыром
+                  помещении вместе с другими ничего не понимающими жертвами.
+                  Сквозь&nbsp;щель в двери вы видите, как некто в капюшоне готовит площадку как будто для проведения
+                  мистического обряда. Удастся ли&nbsp;вам&nbsp;выбраться,&nbsp;пока вы не станете жертвой ритуала?</p>
+                <a class="promo-quest__button button" href="#">Забронировать</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
 
     <footer class="page-footer">
       <div class="page-footer__container">
@@ -163,7 +187,9 @@
               <textarea name="question" placeholder="Начните вводить …" rows="4" cols="40" id="message"></textarea>
             </li>
           </ul>
-          <button class="form__button-submit" type="submit">Отправить вопрос</button>
+          <div class="form__button-wrapper">
+            <button class="form__button" type="submit">Отправить вопрос</button>
+          </div>
           <div class="form__eula">
             <input class="visually-hidden" type="checkbox" id="eula">
             <label for="eula">Я согласен с <a class="form__eula-link" href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>

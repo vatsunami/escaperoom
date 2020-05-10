@@ -21,6 +21,10 @@
   margin-right: 24px;
 }
 
+.menu__bottom {
+  display: none;
+}
+
 @media (max-width: $tablet-width) {
   .menu {
     flex-direction: column;
@@ -28,6 +32,10 @@
 
     &--closed {
       display: none;
+    }
+
+    &--active-js {
+      flex-grow: 1;
     }
   }
 
@@ -40,9 +48,7 @@
     position: relative;
     flex-direction: column;
     width: 100%;
-    padding: 13px 20px 40px;
-    padding-top: 13px;
-    padding-bottom: 40px;
+    padding: 14px 20px 40px;
     align-items: center;
     order: 0;
 
@@ -64,5 +70,13 @@
 
   .menu__tel {
     margin: 0 auto;
+  }
+
+  .menu__bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 0 18px 19px 16px;
+    order: 2;
   }
 }

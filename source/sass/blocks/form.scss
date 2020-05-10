@@ -48,12 +48,16 @@
   resize: none;
 }
 
-.form__button-submit {
+.form__button-wrapper {
+  margin-bottom: 22px;
+}
+
+.form__button {
   box-sizing: border-box;
   display: block;
   width: 219px;
-  margin: 0 auto 22px;
-  padding: 15px 5px 16px 5px;
+  margin: 0 auto;
+  padding: 15px 20px 16px;
   font-family: $raleway-extrabold;
   font-weight: 800;
   font-size: 14px;
@@ -101,6 +105,7 @@
 
 @media (max-width: $mobile-width) {
   .form__fields {
+    margin-bottom: 33px;
     padding-right: 8px;
   }
 
@@ -110,5 +115,14 @@
 
   .form__field textarea {
     padding-top: 16px;
+  }
+
+  .form__button-wrapper {
+    box-sizing: border-box;
+    padding-right: 10px;
+  }
+
+  .form__eula {
+    margin-bottom: 22px;
   }
 }

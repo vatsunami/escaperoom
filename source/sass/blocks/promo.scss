@@ -4,9 +4,8 @@
   flex-grow: 1;
   align-items: center;
   width: 100%;
-  min-height: 768px;
+  min-height: 611px;
   height: 100%;
-  padding-bottom: 207px;
 }
 
 .promo__container {
@@ -14,7 +13,7 @@
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
-  padding: 0 136px;
+  padding: 0 136px 50px;
 }
 
 .promo__title {
@@ -37,7 +36,6 @@
 @media (max-width: $tablet-width) {
   .promo {
     min-height: 259px;
-    padding-bottom: 100px;
   }
 
   .promo__container {
@@ -67,14 +65,15 @@
 
 @media (max-width: $mobile-width) {
   .promo {
-    align-items: flex-end;
-    padding-bottom: 64px;
+    padding: 0;
   }
 
   .promo__container {
     box-sizing: border-box;
     width: 100%;
     padding: 0;
+    padding-top: 333px;
+    padding-bottom: 64px;
   }
 
   .promo__title {

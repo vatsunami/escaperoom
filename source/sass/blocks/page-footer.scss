@@ -1,9 +1,5 @@
 .page-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
   width: 100%;
-  z-index: 11;
   background-color: transparent;
 }
 
@@ -20,14 +16,5 @@
 @media (max-width: $tablet-width) {
   .page-footer {
     display: none;
-    z-index: 15;
-
-    &--show {
-      display: block;
-    }
-  }
-
-  .page-footer__container {
-    padding: 0 18px 19px 16px;
   }
 }

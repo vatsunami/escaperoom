@@ -4,31 +4,30 @@
   flex-grow: 1;
   align-items: center;
   width: 100%;
-  min-height: 768px;
+  min-height: 611px;
   height: 100%;
-  background-color: transparent;
-
-  &--maniac {
-    padding-bottom: 247px;
-  }
-
-  &--mansion {
-    padding-bottom: 161px;
-  }
-
-  &--ritual {
-    padding-bottom: 251px;
-  }
-
-  &--experiment {
-    padding-bottom: 201px;
-  }
 }
 
 .promo-quest__container {
   max-width: 1366px;
   width: 100%;
   margin: 0 auto;
+
+  &--maniac {
+    padding-bottom: 90px;
+  }
+
+  &--mansion {
+    padding-bottom: 4px;
+  }
+
+  &--ritual {
+    padding-bottom: 93px;
+  }
+
+  &--experiment {
+    padding-bottom: 45px;
+  }
 }
 
 .promo-quest__catalog {
@@ -91,10 +90,6 @@
 }
 
 @media (max-width: $tablet-width) {
-  .promo-quest {
-    padding-bottom: 100px;
-  }
-
   .promo-quest__container {
     padding: 0;
   }
@@ -160,7 +155,6 @@
     display: block;
     height: 100%;
     min-height: auto;
-    padding-bottom: 0;
   }
 
   .promo-quest__catalog {
