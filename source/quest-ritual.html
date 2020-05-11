@@ -13,38 +13,38 @@
     <include src="build/img/sprite_auto.svg"></include>
   </div>
   <div class="page-wrapper page-wrapper--ritual">
-    <div class="page-content">
-      <header class="page-header">
-        <div class="page-header__container">
-          <div class="page-header__top">
-            <a class="logo">
-              <picture>
-                <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
-                <img src="img/logo-desktop.svg" alt="Escape Room" width="134" height="52">
-              </picture>
+    <header class="page-header">
+      <div class="page-header__container">
+        <div class="page-header__top">
+          <a class="logo">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
+              <img src="img/logo-desktop.svg" alt="Escape Room" width="134" height="52">
+            </picture>
+          </a>
+          <button class="menu-button">Меню</button>
+        </div>
+        <div class="page-header__menu menu menu--active-js">
+          <nav class="menu__main-nav main-nav">
+            <ul class="main-nav__list">
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Квесты</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Новичкам</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Отзывы</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Акции</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="menu__info">
+            <a href="#" class="menu__location location">
+              <svg class="location__icon" width="16" height="21" viewBox="0 0 16 21">
+                <use xlink:href="#icon-location"></use>
+              </svg>
+              <span class="location__city">Новосибирск</span>
             </a>
-            <button class="menu-button">Меню</button>
+            <span class="menu__tel tel">8 (383) 284 01 60</span>
           </div>
-          <div class="page-header__menu menu menu--active-js">
-            <nav class="menu__main-nav main-nav">
-              <ul class="main-nav__list">
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Квесты</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Новичкам</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Отзывы</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Акции</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
-              </ul>
-            </nav>
-            <div class="menu__info">
-              <a href="#" class="menu__location location">
-                <svg class="location__icon" width="16" height="21" viewBox="0 0 16 21">
-                  <use xlink:href="#icon-location"></use>
-                </svg>
-                <span class="location__city">Новосибирск</span>
-              </a>
-              <span class="menu__tel tel">8 (383) 284 01 60</span>
-            </div>
-            <div class="menu__bottom">
+          <footer class="page-footer menu__bottom">
+            <div class="page-footer__container">
               <div class="social">
                 <b class="visually-hidden">Мы в социальных сетях</b>
                 <ul class="social__list">
@@ -68,44 +68,44 @@
               </div>
               <a class="page-footer__question question" href="#">Задать вопрос</a>
             </div>
-          </div>
+          </footer>
         </div>
-      </header>
+      </div>
+    </header>
 
-      <main class="page-inner">
-        <div class="page-inner__container">
-          <section class="promo-quest">
-            <div class="promo-quest__container promo-quest__container--ritual">
-              <a href="catalog.html" class="promo-quest__catalog">Все квесты</a>
-              <div class="promo-quest__info">
-                <div class="promo-quest__header">
-                  <p class="promo-quest__category">хоррор, мистика</p>
-                  <h2 class="promo-quest__title promo-quest__title--long">Ритуал</h2>
-                </div>
-                <div class="promo-quest__parameters parameters">
-                  <ul class="parameters__list">
-                    <li class="parameters__item">
-                      <span class="parameters__data parameters__data--time">60 мин</span>
-                    </li>
-                    <li class="parameters__item">
-                      <span class="parameters__data parameters__data--person">3-5 чел</span>
-                    </li>
-                    <li class="parameters__item">
-                      <span class="parameters__data parameters__data--puzzle">высокая сложность</span>
-                    </li>
-                  </ul>
-                </div>
-                <p class="promo-quest__description">Тяжелый воздух угнетает, в ночи вы оказыватесь запертыми в сыром
-                  помещении вместе с другими ничего не понимающими жертвами.
-                  Сквозь&nbsp;щель в двери вы видите, как некто в капюшоне готовит площадку как будто для проведения
-                  мистического обряда. Удастся ли&nbsp;вам&nbsp;выбраться,&nbsp;пока вы не станете жертвой ритуала?</p>
-                <a class="promo-quest__button button" href="#">Забронировать</a>
+    <main class="page-inner">
+      <div class="page-inner__container">
+        <section class="promo-quest">
+          <div class="promo-quest__container promo-quest__container--ritual">
+            <a href="catalog.html" class="promo-quest__catalog">Все квесты</a>
+            <div class="promo-quest__info">
+              <div class="promo-quest__header">
+                <p class="promo-quest__category overhead">хоррор, мистика</p>
+                <h2 class="promo-quest__title promo-quest__title--long title title--large">Ритуал</h2>
               </div>
+              <div class="promo-quest__parameters parameters">
+                <ul class="parameters__list">
+                  <li class="parameters__item">
+                    <span class="parameters__data parameters__data--time">60 мин</span>
+                  </li>
+                  <li class="parameters__item">
+                    <span class="parameters__data parameters__data--person">3-5 чел</span>
+                  </li>
+                  <li class="parameters__item">
+                    <span class="parameters__data parameters__data--puzzle">высокая сложность</span>
+                  </li>
+                </ul>
+              </div>
+              <p class="promo-quest__description">Тяжелый воздух угнетает, в ночи вы оказыватесь запертыми в сыром
+                помещении вместе с другими ничего не понимающими жертвами.
+                Сквозь&nbsp;щель в двери вы видите, как некто в капюшоне готовит площадку как будто для проведения
+                мистического обряда. Удастся ли&nbsp;вам&nbsp;выбраться,&nbsp;пока вы не станете жертвой ритуала?</p>
+              <a class="promo-quest__button button" href="#">Забронировать</a>
             </div>
-          </section>
-        </div>
-      </main>
-    </div>
+          </div>
+        </section>
+      </div>
+    </main>
 
     <footer class="page-footer">
       <div class="page-footer__container">

@@ -21,10 +21,6 @@
   margin-right: 24px;
 }
 
-.menu__bottom {
-  display: none;
-}
-
 @media (max-width: $tablet-width) {
   .menu {
     flex-direction: column;
@@ -70,13 +66,5 @@
 
   .menu__tel {
     margin: 0 auto;
-  }
-
-  .menu__bottom {
-    display: flex;
-    justify-content: space-between;
-    margin-top: auto;
-    padding: 0 18px 19px 16px;
-    order: 2;
   }
 }

@@ -3,4 +3,27 @@
   font-size: 64px;
   font-weight: 800;
   line-height: 70px;
+
+  &--large {
+    font-family: $raleway-black;
+    font-weight: 900;
+    font-size: 92px;
+    line-height: 87px;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .title {
+    font-size: 45px;
+    line-height: 55px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+  }
 }

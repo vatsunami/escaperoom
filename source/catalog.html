@@ -9,6 +9,591 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-  <h1>Каталог</h1>
+  <div style="display:none">
+    <include src="build/img/sprite_auto.svg"></include>
+  </div>
+
+  <div class="page-wrapper">
+    <header class="page-header">
+      <div class="page-header__container">
+        <div class="page-header__top">
+          <a class="logo">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
+              <img src="img/logo-desktop.svg" alt="Escape Room" width="134" height="52">
+            </picture>
+          </a>
+          <button class="menu-button">Меню</button>
+        </div>
+        <div class="page-header__menu menu menu--active-js">
+          <nav class="menu__main-nav main-nav">
+            <ul class="main-nav__list">
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Квесты</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Новичкам</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Отзывы</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Акции</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="menu__info">
+            <a href="#" class="menu__location location">
+              <svg class="location__icon" width="16" height="21" viewBox="0 0 16 21">
+                <use xlink:href="#icon-location"></use>
+              </svg>
+              <span class="location__city">Новосибирск</span>
+            </a>
+            <span class="menu__tel tel">8 (383) 284 01 60</span>
+          </div>
+          <footer class="page-footer menu__bottom">
+            <div class="page-footer__container">
+              <div class="social">
+                <b class="visually-hidden">Мы в социальных сетях</b>
+                <ul class="social__list">
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="visually-hidden">Instagram</span>
+                      <svg class="social__icon social__icon--instagram" width="28" height="28" viewBox="0 0 28 28">
+                        <use xlink:href="#icon-social-insta"></use>
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="visually-hidden">Vkontakte</span>
+                      <svg class="social__icon social__icon--vk" width="28" height="28" viewBox="0 0 28 28">
+                        <use xlink:href="#icon-social-vk"></use>
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <a class="page-footer__question question" href="#">Задать вопрос</a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </header>
+
+    <main class="page-inner page-inner--overflow">
+      <div class="page-inner__container">
+        <section class="catalog">
+          <div class="catalog__container">
+            <div class="catalog__header">
+              <h1 class="catalog__overhead overhead">квесты в Новосибирске</h1>
+              <h2 class="catalog__title title">Выберите тематику</h2>
+            </div>
+            <div class="catalog__content">
+              <div class="catalog__category catalog-category">
+                <div class="catalog-category__container">
+                  <ul class="catalog-category__list">
+                    <li class="catalog-category__item">
+                      <a class="catalog-category__link">
+                        <svg class="catalog-category__icon catalog-category__icon--list" width="21" height="24" viewBox="0 0 21 24">
+                          <use xlink:href="#icon-list"></use>
+                        </svg>
+                        <span class="catalog-category__link-text catalog-category__link-text--active">Все квесты</span>
+                      </a>
+                    </li>
+                    <li class="catalog-category__item">
+                      <a class="catalog-category__link" href="#">
+                        <svg class="catalog-category__icon catalog-category__icon--map" width="29" height="24" viewBox="0 0 29 24">
+                          <use xlink:href="#icon-map"></use>
+                        </svg>
+                        <span class="catalog-category__link-text">Приключения</span>
+                      </a>
+                    </li>
+                    <li class="catalog-category__item">
+                      <a class="catalog-category__link" href="#">
+                        <svg class="catalog-category__icon catalog-category__icon--frankiestein" width="24" height="24" viewBox="0 0 24 24">
+                          <use xlink:href="#icon-frankiestein"></use>
+                        </svg>
+                        <span class="catalog-category__link-text">Ужасы</span>
+                      </a>
+                    </li>
+                    <li class="catalog-category__item">
+                      <a class="catalog-category__link" href="#">
+                        <svg class="catalog-category__icon catalog-category__icon--ghost" width="24" height="24" viewBox="0 0 24 24">
+                          <use xlink:href="#icon-ghost"></use>
+                        </svg>
+                        <span class="catalog-category__link-text">Мистика</span>
+                      </a>
+                    </li>
+                    <li class="catalog-category__item">
+                      <a class="catalog-category__link" href="#">
+                        <svg class="catalog-category__icon catalog-category__icon--pipe" width="32" height="24" viewBox="0 0 32 24">
+                          <use xlink:href="#icon-pipe"></use>
+                        </svg>
+                        <span class="catalog-category__link-text">Детектив</span>
+                      </a>
+                    </li>
+                    <li class="catalog-category__item">
+                      <a class="catalog-category__link" href="#">
+                        <svg class="catalog-category__icon catalog-category__icon--atom" width="22.4" height="24" viewBox="0 0 22.4 24">
+                          <use xlink:href="#icon-atom"></use>
+                        </svg>
+                        <span class="catalog-category__link-text">Sci-fi</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+              <div class="catalog__cards">
+                <ul class="catalog__cards-list">
+
+                  <!-- Карточка 1-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-crypt-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags">
+                        <ul class="flags__list">
+                          <li class="flags__item"><span class="flags__flag">Хит</span></li>
+                        </ul>
+                      </div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Склеп</h3>
+                        </a>
+                        <p class="card__address">пр. Ленина, 37</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">2–5 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">сложный</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 2-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-maniac-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags">
+                        <ul class="flags__list">
+                          <li class="flags__item"><span class="flags__flag">Хит</span></li>
+                        </ul>
+                      </div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Маньяк</h3>
+                        </a>
+                        <p class="card__address">Верхнетецкая, 32</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">3–6 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">средний</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 3-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-ritual-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags"></div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Ритуал</h3>
+                        </a>
+                        <p class="card__address">пр. Ленина, 37</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">3–5 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">легкий</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 4-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-ghosts-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags"></div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">История призраков</h3>
+                        </a>
+                        <p class="card__address">Новослободская, 2а</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">5–6 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">легкий</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 5-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-mansion-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags"></div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Тайны старого особняка</h3>
+                        </a>
+                        <p class="card__address">пр. Ленина, 37</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">2–6 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">легкий</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 6-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-cabin-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags">
+                        <ul class="flags__list">
+                          <li class="flags__item"><span class="flags__flag">Хит</span></li>
+                        </ul>
+                      </div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Хижина в лесу</h3>
+                        </a>
+                        <p class="card__address">Верхнетецкая, 32</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">4–7 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">средний</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 7-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-experiment-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags">
+                        <ul class="flags__list">
+                          <li class="flags__item"><span class="flags__flag">Хит</span></li>
+                        </ul>
+                      </div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Фатальный эксперимент</h3>
+                        </a>
+                        <p class="card__address">Верхнетецкая, 32</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">5–8 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">сложный</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 8-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-metro-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags"></div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Метро 2033</h3>
+                        </a>
+                        <p class="card__address">Новослободская, 2а</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">6–8 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">средний</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 9-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-attic-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags"></div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Старый чердак</h3>
+                        </a>
+                        <p class="card__address">Новослободская, 2а</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">2–3 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">легкий</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 10-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-frontier-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags"></div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Последний рубеж</h3>
+                        </a>
+                        <p class="card__address">Верхнетецкая, 32</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">4–7 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">средний</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                  <!-- Карточка 11-->
+
+                  <li class="catalog__cards-item card">
+                    <div class="card__container">
+                      <div class="card__picture">
+                        <img src="img/img-catalog-mars-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                      </div>
+                      <div class="card__flags flags"></div>
+                      <div class="card__info">
+                        <a class="card__link" href="#">
+                          <h3 class="card__title">Марс-2056</h3>
+                        </a>
+                        <p class="card__address">пр. Ленина, 37</p>
+                        <div class="card__parameters">
+                          <ul class="card__parameters-list">
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="13" height="16" viewBox="0 0 13 16">
+                                <use xlink:href="#icon-person"></use>
+                              </svg>
+                              <span class="card__parameters-text">2–4 чел</span>
+                            </li>
+                            <li class="card__parameters-item">
+                              <svg class="card__parameters-icon" width="16" height="16" viewBox="0 0 16 16">
+                                <use xlink:href="#icon-puzzle"></use>
+                              </svg>
+                              <span class="card__parameters-text">легкий</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <section class="modal modal--closed modal-city">
+      <div class="modal__container modal-city__container">
+        <div class="modal__button-close">
+          <button class="button-close">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+        </div>
+        <h2 class="modal__title modal-city__title">Ваш город:</h2>
+        <a class="modal-city__determine" href="#">Определить местоположение</a>
+        <p class="modal-city__text">… или выберите вручную</p>
+        <ul class="modal-city__list">
+          <li class="modal-city__item">
+            <a class="modal-city__link modal-city__link--active" href="#">Новосибирск</a>
+          </li>
+          <li class="modal-city__item">
+            <a class="modal-city__link" href="#">Иркутск</a>
+          </li>
+          <li class="modal-city__item">
+            <a class="modal-city__link" href="#">Смоленск</a>
+          </li>
+          <li class="modal-city__item">
+            <a class="modal-city__link" href="#">Волгоград</a>
+          </li>
+          <li class="modal-city__item">
+            <a class="modal-city__link" href="#">Комсомольск-на-Амуре</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="modal modal--closed modal-question">
+      <div class="modal__container modal-question__container">
+        <div class="modal__button-close">
+          <button class="button-close">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+        </div>
+        <h2 class="modal__title modal-question__title">Задайте вопрос</h2>
+        <form class="modal-question__form form" action="https://echo.htmlacademy.ru" method="post">
+          <ul class="form__fields">
+            <li class="form__field">
+              <label for="username">Чтобы мы смогли обращаться к вам, оставьте ваше имя</label>
+              <input type="text" placeholder="Имя" id="username">
+            </li>
+            <li class="form__field">
+              <label for="email">Чтобы вы получили ответ, оставьте ваш e-mail</label>
+              <input type="email" placeholder="Email" id="email">
+            </li>
+            <li class="form__field">
+              <label for="message">Ваш вопрос:</label>
+              <textarea name="question" placeholder="Начните вводить …" rows="4" cols="40" id="message"></textarea>
+            </li>
+          </ul>
+          <div class="form__button-wrapper">
+            <button class="form__button" type="submit">Отправить вопрос</button>
+          </div>
+          <div class="form__eula">
+            <input class="visually-hidden" type="checkbox" id="eula">
+            <label for="eula">Я согласен с <a class="form__eula-link" href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+
+  <script src="js/script.js"></script>
+
 </body>
 </html>

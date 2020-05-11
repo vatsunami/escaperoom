@@ -14,38 +14,38 @@
   </div>
 
   <div class="page-wrapper page-wrapper--experiment">
-    <div class="page-content">
-      <header class="page-header">
-        <div class="page-header__container">
-          <div class="page-header__top">
-            <a class="logo">
-              <picture>
-                <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
-                <img src="img/logo-desktop.svg" alt="Escape Room" width="134" height="52">
-              </picture>
+    <header class="page-header">
+      <div class="page-header__container">
+        <div class="page-header__top">
+          <a class="logo">
+            <picture>
+              <source media="(max-width: 767px)" srcset="img/logo-mobile.svg">
+              <img src="img/logo-desktop.svg" alt="Escape Room" width="134" height="52">
+            </picture>
+          </a>
+          <button class="menu-button">Меню</button>
+        </div>
+        <div class="page-header__menu menu menu--active-js">
+          <nav class="menu__main-nav main-nav">
+            <ul class="main-nav__list">
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Квесты</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Новичкам</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Отзывы</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Акции</a></li>
+              <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="menu__info">
+            <a href="#" class="menu__location location">
+              <svg class="location__icon" width="16" height="21" viewBox="0 0 16 21">
+                <use xlink:href="#icon-location"></use>
+              </svg>
+              <span class="location__city">Новосибирск</span>
             </a>
-            <button class="menu-button">Меню</button>
+            <span class="menu__tel tel">8 (383) 284 01 60</span>
           </div>
-          <div class="page-header__menu menu menu--active-js">
-            <nav class="menu__main-nav main-nav">
-              <ul class="main-nav__list">
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Квесты</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Новичкам</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Отзывы</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Акции</a></li>
-                <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
-              </ul>
-            </nav>
-            <div class="menu__info">
-              <a href="#" class="menu__location location">
-                <svg class="location__icon" width="16" height="21" viewBox="0 0 16 21">
-                  <use xlink:href="#icon-location"></use>
-                </svg>
-                <span class="location__city">Новосибирск</span>
-              </a>
-              <span class="menu__tel tel">8 (383) 284 01 60</span>
-            </div>
-            <div class="menu__bottom">
+          <footer class="page-footer menu__bottom">
+            <div class="page-footer__container">
               <div class="social">
                 <b class="visually-hidden">Мы в социальных сетях</b>
                 <ul class="social__list">
@@ -69,135 +69,108 @@
               </div>
               <a class="page-footer__question question" href="#">Задать вопрос</a>
             </div>
-          </div>
+          </footer>
         </div>
-      </header>
-
-      <main class="page-inner">
-        <div class="page-inner__container">
-          <section class="promo-quest">
-            <div class="promo-quest__container promo-quest__container--experiment">
-              <a href="catalog.html" class="promo-quest__catalog">Все квесты</a>
-              <div class="promo-quest__info promo-quest__info--no-catalog">
-                <div class="promo-quest__header">
-                  <p class="promo-quest__category">приключение, детектив</p>
-                  <h2 class="promo-quest__title promo-quest__title--long">Фатальный эксперимент</h2>
-                </div>
-                <div class="promo-quest__parameters parameters">
-                  <ul class="parameters__list">
-                    <li class="parameters__item">
-                      <span class="parameters__data parameters__data--time">90 мин</span>
-                    </li>
-                    <li class="parameters__item">
-                      <span class="parameters__data parameters__data--person">5-8 чел</span>
-                    </li>
-                    <li class="parameters__item">
-                      <span class="parameters__data parameters__data--puzzle">высокая сложность</span>
-                    </li>
-                  </ul>
-                </div>
-                <p class="promo-quest__description">Вы стоите на пороге нового научного открытия, которое перевернет
-                  судьбу человечества. Но что-то идёт не так, и ядерный реактор, который&nbsp;работает на полную
-                  мощность, сигнализирует о скорой поломке.&nbsp;Удастя ли вам починить его в отведенное время
-                  и&nbsp;предотвратить&nbsp;гибель людей в этом фатальном эксперимете?</p>
-                <a class="promo-quest__button button" href="#">Забронировать</a>
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
-
-      <section class="modal modal--closed modal-city">
-        <div class="modal__container modal-city__container">
-          <div class="modal__button-close">
-            <button class="button-close">
-              <span class="visually-hidden">Закрыть</span>
-            </button>
-          </div>
-          <h2 class="modal__title modal-city__title">Ваш город:</h2>
-          <a class="modal-city__determine" href="#">Определить местоположение</a>
-          <p class="modal-city__text">… или выберите вручную</p>
-          <ul class="modal-city__list">
-            <li class="modal-city__item">
-              <a class="modal-city__link modal-city__link--active" href="#">Новосибирск</a>
-            </li>
-            <li class="modal-city__item">
-              <a class="modal-city__link" href="#">Иркутск</a>
-            </li>
-            <li class="modal-city__item">
-              <a class="modal-city__link" href="#">Смоленск</a>
-            </li>
-            <li class="modal-city__item">
-              <a class="modal-city__link" href="#">Волгоград</a>
-            </li>
-            <li class="modal-city__item">
-              <a class="modal-city__link" href="#">Комсомольск-на-Амуре</a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="modal modal--closed modal-question">
-        <div class="modal__container modal-question__container">
-          <div class="modal__button-close">
-            <button class="button-close">
-              <span class="visually-hidden">Закрыть</span>
-            </button>
-          </div>
-          <h2 class="modal__title modal-question__title">Задайте вопрос</h2>
-          <form class="modal-question__form form" action="https://echo.htmlacademy.ru" method="post">
-            <ul class="form__fields">
-              <li class="form__field">
-                <label for="username">Чтобы мы смогли обращаться к вам, оставьте ваше имя</label>
-                <input type="text" placeholder="Имя" id="username">
-              </li>
-              <li class="form__field">
-                <label for="email">Чтобы вы получили ответ, оставьте ваш e-mail</label>
-                <input type="email" placeholder="Email" id="email">
-              </li>
-              <li class="form__field">
-                <label for="message">Ваш вопрос:</label>
-                <textarea name="question" placeholder="Начните вводить …" rows="4" cols="40" id="message"></textarea>
-              </li>
-            </ul>
-            <div class="form__button-wrapper">
-              <button class="form__button" type="submit">Отправить вопрос</button>
-            </div>
-            <div class="form__eula">
-              <input class="visually-hidden" type="checkbox" id="eula">
-              <label for="eula">Я согласен с <a class="form__eula-link" href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>
-            </div>
-          </form>
-        </div>
-      </section>
-    </div>
-
-    <footer class="page-footer">
-      <div class="page-footer__container">
-        <div class="page-footer__social social">
-          <b class="visually-hidden">Мы в социальных сетях</b>
-          <ul class="social__list">
-            <li class="social__item">
-              <a class="social__link" href="#">
-                <span class="visually-hidden">Instagram</span>
-                <svg class="social__icon social__icon--instagram" width="28" height="28" viewBox="0 0 28 28">
-                  <use xlink:href="#icon-social-insta"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a class="social__link" href="#">
-                <span class="visually-hidden">Vkontakte</span>
-                <svg class="social__icon social__icon--vk" width="28" height="28" viewBox="0 0 28 28">
-                  <use xlink:href="#icon-social-vk"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <a class="page-footer__question question" href="#">Задать вопрос</a>
       </div>
-    </footer>
+    </header>
+
+    <main class="page-inner">
+      <div class="page-inner__container">
+        <section class="promo-quest">
+          <div class="promo-quest__container promo-quest__container--experiment">
+            <a href="catalog.html" class="promo-quest__catalog">Все квесты</a>
+            <div class="promo-quest__info promo-quest__info--no-catalog">
+              <div class="promo-quest__header">
+                <p class="promo-quest__category overhead">приключение, детектив</p>
+                <h2 class="promo-quest__title promo-quest__title--long title title--large">Фатальный эксперимент</h2>
+              </div>
+              <div class="promo-quest__parameters parameters">
+                <ul class="parameters__list">
+                  <li class="parameters__item">
+                    <span class="parameters__data parameters__data--time">90 мин</span>
+                  </li>
+                  <li class="parameters__item">
+                    <span class="parameters__data parameters__data--person">5-8 чел</span>
+                  </li>
+                  <li class="parameters__item">
+                    <span class="parameters__data parameters__data--puzzle">высокая сложность</span>
+                  </li>
+                </ul>
+              </div>
+              <p class="promo-quest__description">Вы стоите на пороге нового научного открытия, которое перевернет
+                судьбу человечества. Но что-то идёт не так, и ядерный реактор, который&nbsp;работает на полную
+                мощность, сигнализирует о скорой поломке.&nbsp;Удастя ли вам починить его в отведенное время
+                и&nbsp;предотвратить&nbsp;гибель людей в этом фатальном эксперимете?</p>
+              <a class="promo-quest__button button" href="#">Забронировать</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <section class="modal modal--closed modal-city">
+      <div class="modal__container modal-city__container">
+        <div class="modal__button-close">
+          <button class="button-close">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+        </div>
+        <h2 class="modal__title modal-city__title">Ваш город:</h2>
+        <a class="modal-city__determine" href="#">Определить местоположение</a>
+        <p class="modal-city__text">… или выберите вручную</p>
+        <ul class="modal-city__list">
+          <li class="modal-city__item">
+            <a class="modal-city__link modal-city__link--active" href="#">Новосибирск</a>
+          </li>
+          <li class="modal-city__item">
+            <a class="modal-city__link" href="#">Иркутск</a>
+          </li>
+          <li class="modal-city__item">
+            <a class="modal-city__link" href="#">Смоленск</a>
+          </li>
+          <li class="modal-city__item">
+            <a class="modal-city__link" href="#">Волгоград</a>
+          </li>
+          <li class="modal-city__item">
+            <a class="modal-city__link" href="#">Комсомольск-на-Амуре</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="modal modal--closed modal-question">
+      <div class="modal__container modal-question__container">
+        <div class="modal__button-close">
+          <button class="button-close">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+        </div>
+        <h2 class="modal__title modal-question__title">Задайте вопрос</h2>
+        <form class="modal-question__form form" action="https://echo.htmlacademy.ru" method="post">
+          <ul class="form__fields">
+            <li class="form__field">
+              <label for="username">Чтобы мы смогли обращаться к вам, оставьте ваше имя</label>
+              <input type="text" placeholder="Имя" id="username">
+            </li>
+            <li class="form__field">
+              <label for="email">Чтобы вы получили ответ, оставьте ваш e-mail</label>
+              <input type="email" placeholder="Email" id="email">
+            </li>
+            <li class="form__field">
+              <label for="message">Ваш вопрос:</label>
+              <textarea name="question" placeholder="Начните вводить …" rows="4" cols="40" id="message"></textarea>
+            </li>
+          </ul>
+          <div class="form__button-wrapper">
+            <button class="form__button" type="submit">Отправить вопрос</button>
+          </div>
+          <div class="form__eula">
+            <input class="visually-hidden" type="checkbox" id="eula">
+            <label for="eula">Я согласен с <a class="form__eula-link" href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>
+          </div>
+        </form>
+      </div>
+    </section>
   </div>
 
   <script src="js/script.js"></script>

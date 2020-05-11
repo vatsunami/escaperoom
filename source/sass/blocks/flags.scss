@@ -1,0 +1,40 @@
+.flags {
+  box-sizing: border-box;
+  min-height: 59px;
+  z-index: 1;
+}
+
+.flags__list {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 15px 17px;
+  list-style: none;
+}
+
+.flags__item {
+  margin-left: 18px;
+}
+
+.flags__flag {
+  box-sizing: border-box;
+  display: block;
+  padding: 4px 13px 3px 30px;
+  font-size: 12px;
+  line-height: 17px;
+  border-radius: 25px;
+  border: 2px solid rgba(242, 137, 15, 0.74);
+  font-feature-settings: "pnum" on, "lnum" on;
+  background-image: url("../img/icon-star.svg");
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: 14px 6px;
+}
+
+@media (max-width: $mobile-width) {
+  .flags__list {
+    padding: 15px 14px;
+  }
+}

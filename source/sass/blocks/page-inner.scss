@@ -8,15 +8,18 @@
   height: calc(100% - 157px);
   overflow-y: scroll;
 
-  // &--active-js {
-  //   position: static;
-  // }
+  &--overflow {
+    height: calc(100% - 105px);
+  }
 }
 
 .page-inner__container {
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 @media (max-width: $tablet-width) {
