@@ -27,10 +27,10 @@ document.querySelector(".page-inner").classList.add("page-inner--active-js");
 
     function openMenu () {
       document.body.classList.add("noscroll--header-menu");
-      pageHeader.classList.add("page-header--active-js");
-      container.classList.add("page-header__container--active-js");
+      pageHeader.classList.add("page-header--opened");
+      container.classList.add("page-header__container--opened");
       container.classList.remove("page-header__container--closed");
-      menu.classList.add("menu--active-js");
+      menu.classList.add("menu--opened");
       menu.classList.remove("menu--closed");
       menuButton.classList.remove("menu-button--closed");
       mainNav.classList.remove("main-nav--closed");
@@ -44,10 +44,10 @@ document.querySelector(".page-inner").classList.add("page-inner--active-js");
 
     function closeMenu () {
       document.body.classList.remove("noscroll--header-menu");
-      pageHeader.classList.remove("page-header--active-js");
-      container.classList.remove("page-header__container--active-js");
+      pageHeader.classList.remove("page-header--opened");
+      container.classList.remove("page-header__container--opened");
       container.classList.add("page-header__container--closed");
-      menu.classList.remove("menu--active-js");
+      menu.classList.remove("menu--opened");
       menu.classList.add("menu--closed");
       menuButton.classList.add("menu-button--closed");
       mainNav.classList.add("main-nav--closed");
