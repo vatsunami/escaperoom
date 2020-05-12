@@ -1,0 +1,24 @@
+.button-back {
+  display: none;
+}
+
+@media (max-width: $mobile-width) {
+  .button-back {
+    display: block;
+    margin-left: 10px;
+    padding-left: 20px;
+    font-family: $raleway-bold;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: 0.02em;
+    font-feature-settings: "pnum" on, "lnum" on;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #e6e6e6;
+    background-image: url("../img/icon-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
+    background-size: 9px 12px;
+  }
+}

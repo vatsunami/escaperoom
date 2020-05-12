@@ -25,6 +25,7 @@
   .menu {
     flex-direction: column;
     width: 100%;
+    z-index: 100;
 
     &--closed {
       display: none;

@@ -25,5 +25,10 @@
   .title {
     font-size: 36px;
     line-height: 40px;
+
+    &--large {
+      font-size: 42px;
+      line-height: 46px;
+    }
   }
 }

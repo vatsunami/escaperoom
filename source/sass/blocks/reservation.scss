@@ -1,0 +1,225 @@
+.reservation__container {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 27px 150px 0 136px;
+}
+
+.reservation__title {
+  margin: 0;
+}
+
+.reservation__overhead {
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 8px;
+  padding: 0 6px;
+}
+
+.reservation__category {
+  display: none;
+}
+
+.reservation__header {
+  box-sizing: border-box;
+  padding: 0 39px 12px 0;
+  flex-grow: 0;
+  max-width: 900px;
+}
+
+.reservation__purchase {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+  align-items: flex-end;
+  padding: 19px 0 18px 46px;
+  width: 448px;
+  min-height: 104px;
+}
+
+.reservation__purchase-info {
+  padding-right: 97px;
+  width: 165px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 22px;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.reservation__purchase-buy {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  flex-shrink: 0;
+  margin-bottom: 5px;
+  padding-right: 12px;
+  padding-bottom: 6px;
+  font-size: 15px;
+  line-height: 22px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: top;
+  border-bottom: 2px solid $color-orange;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 7px;
+    right: -3px;
+    display: block;
+    border: 4px solid transparent;
+    border-left: 5px solid #ffffff;
+  }
+}
+
+.reservation__body {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 33px 46px 33px;
+  border-top: 0.5px solid rgba(230, 230, 230, 0.25);
+}
+
+.reservation__date {
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 20px;
+  padding-left: 1px;
+}
+
+.reservation__date-select {
+  box-sizing: border-box;
+  width: 120px;
+  height: 36px;
+  margin: 2px 23px 0 0;
+  padding: 0;
+  font-family: $raleway-medium;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 22px;
+  color: #ffffff;
+  font-feature-settings: "pnum" on, "lnum" on;
+  text-align: left;
+  border: none;
+  background-image: url("../img/icon-triangle.svg");
+  background-repeat: no-repeat;
+  background-size: 5px 7px;
+  background-position: top 14px right 1px;
+  background-color: transparent;
+  border-bottom: 2px solid $color-orange;
+  appearance: none;
+  cursor: pointer;
+}
+
+.reservation__date-select::-ms-expand {
+  display: none;
+}
+
+.reservation__date-day {
+  font-family: $raleway-extrabold;
+  font-size: 28px;
+  font-weight: 800;
+  line-height: 40px;
+}
+
+@media (max-width: $tablet-width) {
+  .reservation__container {
+    padding: 27px 40px 0;
+  }
+
+  .reservation__body {
+    padding: 33px 20px;
+  }
+
+  .reservation__title {
+    font-size: 46px;
+    line-height: 55px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .reservation__container {
+    display: block;
+    padding: 7px 30px 0;
+  }
+
+  .reservation__body {
+    padding: 33px 46px;
+  }
+
+  .reservation__header {
+    padding: 0 15px;
+  }
+
+  .reservation__overhead {
+    padding: 0;
+  }
+
+  .reservation__title {
+    font-size: 42px;
+    line-height: 46px;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .reservation__container {
+    display: flex;
+    flex-direction: column;
+    padding: 7px 0 87px;
+  }
+
+  .reservation__button-back {
+    margin-bottom: 30px;
+  }
+
+  .reservation__header {
+    width: auto;
+    margin-bottom: 12px;
+    padding: 0 16px;
+    order: 1;
+  }
+
+  .reservation__purchase {
+    align-items: flex-start;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 40px 0 17px;
+    order: 2;
+  }
+
+  .reservation__purchase-info {
+    width: auto;
+    padding: 0;
+  }
+
+  .reservation__overhead {
+    display: none;
+  }
+
+  .reservation__category {
+    display: block;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .reservation__title {
+    letter-spacing: normal;
+  }
+
+  .reservation__body {
+    margin-bottom: 6px;
+    padding: 28px 0 0;
+    order: 1;
+  }
+
+  .reservation__date {
+    margin-bottom: 19px;
+    padding: 0 16px;
+  }
+
+  .reservation__date-select {
+    margin: 4px 16px 0 0;
+  }
+}

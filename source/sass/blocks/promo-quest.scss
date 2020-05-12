@@ -30,10 +30,6 @@
   }
 }
 
-.promo-quest__catalog {
-  display: none;
-}
-
 .promo-quest__info {
   box-sizing: border-box;
   margin-left: auto;
@@ -148,32 +144,17 @@
     min-height: auto;
   }
 
-  .promo-quest__catalog {
-    display: inline-block;
-    margin-left: 10px;
-    padding-left: 20px;
-    font-family: $raleway-bold;
-    font-weight: 700;
-    font-size: 12px;
-    line-height: 17px;
-    letter-spacing: 0.02em;
-    font-feature-settings: "pnum" on, "lnum" on;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #e6e6e6;
-    background-image: url("../img/icon-arrow.svg");
-    background-repeat: no-repeat;
-    background-position: 4px 2px;
-    background-size: 9px 12px;
+  .promo-quest__container {
+    padding-top: 7px;
   }
 
   .promo-quest__info {
     max-width: 500px;
     margin: 0;
-    padding: 285px 0 38px;
+    padding: 287px 0 38px;
 
     &--long-title {
-      padding-top: 178px;
+      padding-top: 180px;
     }
 
     &--no-catalog {
