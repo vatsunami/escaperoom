@@ -10,8 +10,6 @@
   };
 })();
 
-document.querySelector('.page-inner').classList.add('page-inner--active-js');
-
 
 (function headerMenu() {
   var pageHeader = document.querySelector('.page-header');

@@ -111,16 +111,25 @@
   }
 }
 
-.card__parameters-icon {
-  margin-top: 2px;
-  margin-right: 8px;
-}
-
 .card__parameters-text {
-  padding-top: 1px;
+  box-sizing: border-box;
+  padding: 1px 0 0 21px;
   font-size: 13px;
   line-height: 19px;
   font-feature-settings: "pnum" on, "lnum" on;
+  background-repeat: no-repeat;
+  background-position: 0 2px;
+
+  &--person {
+    background-image: url("../img/icon-person.svg");
+    background-size: 13px 16px;
+  }
+
+  &--puzzle {
+    padding-left: 24px;
+    background-image: url("../img/icon-puzzle.svg");
+    background-size: 16px;
+  }
 }
 
 @media (max-width: $mobile-width) {
