@@ -1,11 +1,10 @@
 .promo {
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   flex-grow: 1;
-  align-items: center;
   width: 100%;
-  min-height: 611px;
-  height: 100%;
 }
 
 .promo__container {
@@ -13,7 +12,7 @@
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
-  padding: 0 136px 50px;
+  padding: 0 136px 87px;
 }
 
 .promo__title {
@@ -34,15 +33,9 @@
 }
 
 @media (max-width: $tablet-width) {
-  .promo {
-    min-height: 259px;
-  }
-
   .promo__container {
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    width: 100%;
     padding: 25px 0;
   }
 
@@ -65,15 +58,11 @@
 
 @media (max-width: $mobile-width) {
   .promo {
-    padding: 0;
+    justify-content: flex-end;
   }
 
   .promo__container {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 0;
-    padding-top: 333px;
-    padding-bottom: 64px;
+    padding: 64px 0;
   }
 
   .promo__title {

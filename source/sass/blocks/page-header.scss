@@ -1,6 +1,5 @@
 .page-header {
   z-index: 10;
-  min-height: 109px;
 }
 
 .page-header__container {
@@ -23,7 +22,7 @@
 
 @media (max-width: $tablet-width) {
   .page-header {
-    min-height: 105px;
+    // min-height: 105px;
 
     &--opened {
       position: fixed;
@@ -72,10 +71,10 @@
 
 @media (max-width: $mobile-width) {
   .page-header {
-    min-height: 82px;
+    // min-height: 82px;
   }
 
   .page-header__top {
-    padding: 19px 14px 18px;
+    padding: 19px 14px 4px;
   }
 }

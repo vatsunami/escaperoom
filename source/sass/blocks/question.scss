@@ -1,4 +1,5 @@
 .question {
+  display: flex;
   padding: 6px 0 2px;
   align-self: flex-start;
   font-family: $raleway-medium;
@@ -9,6 +10,31 @@
   text-decoration: none;
   border-bottom: 1px dashed #e6e6e6;
   z-index: 3;
+
+  &::before {
+    content: "?";
+    display: none;
+    margin-right: 2px;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $color-orange;
+
+    &::before {
+      display: block;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &::before {
+    color: $color-orange;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 @media (max-width: $tablet-width) {

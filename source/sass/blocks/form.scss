@@ -34,6 +34,11 @@
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 3px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.64;
+  }
 }
 
 .form__field input::placeholder,
@@ -65,10 +70,14 @@
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #ffffff;
-  background-color: $color-disabled;
+  background-color: $color-orange;
   border-radius: 47px;
   border: 0;
   cursor: pointer;
+
+  &:disabled {
+    background-color: $color-disabled;
+  }
 }
 
 .form__eula label {
@@ -95,6 +104,10 @@
 }
 
 .form__eula input:checked ~ label::before {
+  background-image: url("../img/icon-check.svg");
+  background-repeat: no-repeat;
+  background-size: 8px 9px;
+  background-position: 4px;
   opacity: 1;
 }
 

@@ -69,3 +69,9 @@
     margin: 0 auto;
   }
 }
+
+@media (max-width: $tablet-width) {
+  .menu__info {
+    padding: 21px 20px 40px;
+  }
+}

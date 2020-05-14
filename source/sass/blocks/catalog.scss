@@ -2,13 +2,13 @@
   box-sizing: border-box;
   max-width: 1366px;
   margin: 0 auto;
-  padding: 11px 83px 0;
+  padding: 22px 77px 0;
 }
 
 .catalog__header {
   box-sizing: border-box;
   margin-bottom: 48px;
-  padding: 0 57px;
+  padding: 0 59px;
 }
 
 .catalog__overhead {
@@ -20,14 +20,14 @@
 }
 
 .catalog__category {
-  margin-bottom: 44px;
+  margin-bottom: 39px;
 }
 
 .catalog__cards-list {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0 51px 0 45px;
+  padding: 0 61px 0 47px;
   list-style: none;
 }
 
@@ -40,14 +40,22 @@
     padding: 11px 0 0;
   }
 
+  .catalog__header {
+    padding: 0 34px;
+  }
+
   .catalog__cards-list {
     padding: 0 12px;
+  }
+
+  .catalog__cards-item {
+    margin-bottom: 24px;
   }
 }
 
 @media (max-width: $mobile-width) {
   .catalog__container {
-    padding: 4px 0 0;
+    padding: 11px 0 0;
   }
 
   .catalog__header {

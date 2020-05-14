@@ -7,13 +7,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Заказ квеста</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <script>
+    document.createElement("picture");
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.js" async=""></script>
 </head>
 <body>
   <div style="display:none">
     <include src="build/img/sprite_auto.svg"></include>
   </div>
 
-  <div class="page-wrapper">
+  <div class="page-wrapper page-wrapper--bg-blur">
     <header class="page-header">
       <div class="page-header__container">
         <div class="page-header__top">
@@ -50,19 +54,13 @@
                 <b class="visually-hidden">Мы в социальных сетях</b>
                 <ul class="social__list">
                   <li class="social__item">
-                    <a class="social__link" href="#">
+                    <a class="social__link social__link--instagram" href="#">
                       <span class="visually-hidden">Instagram</span>
-                      <svg class="social__icon social__icon--instagram" width="28" height="28" viewBox="0 0 28 28">
-                        <use xlink:href="#icon-social-insta"></use>
-                      </svg>
                     </a>
                   </li>
                   <li class="social__item">
-                    <a class="social__link" href="#">
+                    <a class="social__link social__link--vk" href="#">
                       <span class="visually-hidden">Vkontakte</span>
-                      <svg class="social__icon social__icon--vk" width="28" height="28" viewBox="0 0 28 28">
-                        <use xlink:href="#icon-social-vk"></use>
-                      </svg>
                     </a>
                   </li>
                 </ul>
@@ -150,7 +148,7 @@
                   <!-- Выбрано -->
 
                   <li class="time__item">
-                    <input class="time__input visually-hidden" type="radio" id="time-6" name="time" checked>
+                    <input class="time__input visually-hidden" type="radio" id="time-6" name="time">
                     <label class="time__label" for="time-6">16:00</label>
                     <span class="time__price">1500 ₽</span>
                   </li>
@@ -247,7 +245,7 @@
               <input type="text" placeholder="Имя" id="username">
             </li>
             <li class="form__field">
-              <label for="email">Чтобы вы получили ответ, оставьте ваш e-mail</label>
+              <label for="email">Чтобы вы получили ответ, оставьте ваш e‑mail</label>
               <input type="email" placeholder="Email" id="email">
             </li>
             <li class="form__field">
@@ -256,11 +254,15 @@
             </li>
           </ul>
           <div class="form__button-wrapper">
-            <button class="form__button" type="submit">Отправить вопрос</button>
+            <button class="form__button" type="submit" disabled>Отправить вопрос</button>
           </div>
           <div class="form__eula">
             <input class="visually-hidden" type="checkbox" id="eula">
-            <label for="eula">Я согласен с <a class="form__eula-link" href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>
+            <label for="eula">
+              <span>Я согласен с</span>
+              <a href="#">правилами обработки персональных данных</a>
+              <span>и пользовательским соглашением</span>
+            </label>
           </div>
         </form>
       </div>

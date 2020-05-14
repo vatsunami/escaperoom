@@ -7,6 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Каталог</title>
   <link rel="stylesheet" href="css/style.min.css">
+  <script>
+    document.createElement("picture");
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.js" async=""></script>
 </head>
 <body>
   <div style="display:none">
@@ -50,19 +54,13 @@
                 <b class="visually-hidden">Мы в социальных сетях</b>
                 <ul class="social__list">
                   <li class="social__item">
-                    <a class="social__link" href="#">
+                    <a class="social__link social__link--instagram" href="#">
                       <span class="visually-hidden">Instagram</span>
-                      <svg class="social__icon social__icon--instagram" width="28" height="28" viewBox="0 0 28 28">
-                        <use xlink:href="#icon-social-insta"></use>
-                      </svg>
                     </a>
                   </li>
                   <li class="social__item">
-                    <a class="social__link" href="#">
+                    <a class="social__link social__link--vk" href="#">
                       <span class="visually-hidden">Vkontakte</span>
-                      <svg class="social__icon social__icon--vk" width="28" height="28" viewBox="0 0 28 28">
-                        <use xlink:href="#icon-social-vk"></use>
-                      </svg>
                     </a>
                   </li>
                 </ul>
@@ -74,7 +72,7 @@
       </div>
     </header>
 
-    <main class="page-inner page-inner--overflow">
+    <main class="page-inner">
       <div class="page-inner__container">
         <section class="catalog">
           <div class="catalog__container">
@@ -87,56 +85,37 @@
                 <div class="catalog-category__container">
                   <ul class="catalog-category__list">
                     <li class="catalog-category__item">
-                      <a class="catalog-category__link">
-                        <svg class="catalog-category__icon catalog-category__icon--list" width="21" height="24" viewBox="0 0 21 24">
-                          <use xlink:href="#icon-list"></use>
-                        </svg>
+                      <a class="catalog-category__link catalog-category__link--list catalog-category__link--active">
                         <span class="catalog-category__link-text catalog-category__link-text--active">Все квесты</span>
                       </a>
                     </li>
                     <li class="catalog-category__item">
-                      <a class="catalog-category__link" href="#">
-                        <svg class="catalog-category__icon catalog-category__icon--map" width="29" height="24" viewBox="0 0 29 24">
-                          <use xlink:href="#icon-map"></use>
-                        </svg>
+                      <a class="catalog-category__link catalog-category__link--map" href="#">
                         <span class="catalog-category__link-text">Приключения</span>
                       </a>
                     </li>
                     <li class="catalog-category__item">
-                      <a class="catalog-category__link" href="#">
-                        <svg class="catalog-category__icon catalog-category__icon--frankiestein" width="24" height="24" viewBox="0 0 24 24">
-                          <use xlink:href="#icon-frankiestein"></use>
-                        </svg>
+                      <a class="catalog-category__link catalog-category__link--frankiestein" href="#">
                         <span class="catalog-category__link-text">Ужасы</span>
                       </a>
                     </li>
                     <li class="catalog-category__item">
-                      <a class="catalog-category__link" href="#">
-                        <svg class="catalog-category__icon catalog-category__icon--ghost" width="24" height="24" viewBox="0 0 24 24">
-                          <use xlink:href="#icon-ghost"></use>
-                        </svg>
+                      <a class="catalog-category__link catalog-category__link--ghost" href="#">
                         <span class="catalog-category__link-text">Мистика</span>
                       </a>
                     </li>
                     <li class="catalog-category__item">
-                      <a class="catalog-category__link" href="#">
-                        <svg class="catalog-category__icon catalog-category__icon--pipe" width="32" height="24" viewBox="0 0 32 24">
-                          <use xlink:href="#icon-pipe"></use>
-                        </svg>
+                      <a class="catalog-category__link catalog-category__link--pipe" href="#">
                         <span class="catalog-category__link-text">Детектив</span>
                       </a>
                     </li>
                     <li class="catalog-category__item">
-                      <a class="catalog-category__link" href="#">
-                        <svg class="catalog-category__icon catalog-category__icon--atom" width="22.4" height="24" viewBox="0 0 22.4 24">
-                          <use xlink:href="#icon-atom"></use>
-                        </svg>
+                      <a class="catalog-category__link catalog-category__link--atom" href="#">
                         <span class="catalog-category__link-text">Sci-fi</span>
                       </a>
                     </li>
                   </ul>
                 </div>
-
               </div>
               <div class="catalog__cards">
                 <ul class="catalog__cards-list">
@@ -145,8 +124,16 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-crypt-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-crypt-mobile-webp@2x.webp 1x, img/img-crypt-mobile-webp@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-crypt@1x.webp 1x, img/img-crypt@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-crypt-mobile@2x.jpg 1x, img/img-crypt-mobile@4x.jpg 2x">
+                          <img src="img/img-crypt@1x.jpg" srcset="img/img-crypt@1x.jpg 1x, img/img-crypt@2x.jpg 2x" alt="Склеп" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags">
                         <ul class="flags__list">
@@ -154,9 +141,7 @@
                         </ul>
                       </div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Склеп</h3>
-                        </a>
+                        <h3 class="card__title">Склеп</h3>
                         <p class="card__address">пр. Ленина, 37</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -182,8 +167,16 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-maniac-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-maniac@2x.webp 1x, img/img-maniac@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-maniac@1x.webp 1x, img/img-maniac@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-maniac-mobile@2x.jpg 1x, img/img-maniac-mobile@4x.jpg 2x">
+                          <img src="img/img-maniac@1x.jpg" srcset="img/img-maniac@1x.jpg 1x, img/img-maniac@2x.jpg 2x" alt="Маньяк" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags">
                         <ul class="flags__list">
@@ -191,9 +184,7 @@
                         </ul>
                       </div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Маньяк</h3>
-                        </a>
+                        <h3 class="card__title">Маньяк</h3>
                         <p class="card__address">Верхнетецкая, 32</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -219,14 +210,20 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-ritual-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-ritual@2x.webp 1x, img/img-ritual@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-ritual@1x.webp 1x, img/img-ritual@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-ritual-mobile@2x.jpg 1x, img/img-ritual-mobile@4x.jpg 2x">
+                          <img src="img/img-ritual@1x.jpg" srcset="img/img-ritual@1x.jpg 1x, img/img-ritual@2x.jpg 2x" alt="Ритуал" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags"></div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Ритуал</h3>
-                        </a>
+                        <h3 class="card__title">Ритуал</h3>
                         <p class="card__address">пр. Ленина, 37</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -252,14 +249,20 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-ghosts-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-ghosts@2x.webp 1x, img/img-ghosts@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-ghosts@1x.webp 1x, img/img-ghosts@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-ghosts-mobile@2x.jpg 1x, img/img-ghosts-mobile@4x.jpg 2x">
+                          <img src="img/img-ghosts@1x.jpg" srcset="img/img-ghosts@1x.jpg 1x, img/img-ghosts@2x.jpg 2x" alt="Ритуал" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags"></div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">История призраков</h3>
-                        </a>
+                        <h3 class="card__title">История призраков</h3>
                         <p class="card__address">Новослободская, 2а</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -285,14 +288,20 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-mansion-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-mansion@2x.webp 1x, img/img-mansion@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-mansion@1x.webp 1x, img/img-mansion@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-mansion-mobile@2x.jpg 1x, img/img-mansion-mobile@4x.jpg 2x">
+                          <img src="img/img-mansion@1x.jpg" srcset="img/img-mansion@1x.jpg 1x, img/img-mansion@2x.jpg 2x" alt="Тайны старого особняка" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags"></div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Тайны старого особняка</h3>
-                        </a>
+                        <h3 class="card__title">Тайны старого особняка</h3>
                         <p class="card__address">пр. Ленина, 37</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -318,8 +327,16 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-cabin-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-cabin@2x.webp 1x, img/img-cabin@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-cabin@1x.webp 1x, img/img-cabin@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-cabin-mobile@2x.jpg 1x, img/img-cabin-mobile@4x.jpg 2x">
+                          <img src="img/img-cabin@1x.jpg" srcset="img/img-cabin@1x.jpg 1x, img/img-cabin@2x.jpg 2x" alt="Хижина в лесу" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags">
                         <ul class="flags__list">
@@ -327,9 +344,7 @@
                         </ul>
                       </div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Хижина в лесу</h3>
-                        </a>
+                        <h3 class="card__title">Хижина в лесу</h3>
                         <p class="card__address">Верхнетецкая, 32</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -355,8 +370,16 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-experiment-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-experiment@2x.webp 1x, img/img-experiment@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-experiment@1x.webp 1x, img/img-experiment@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-experiment-mobile@2x.jpg 1x, img/img-experiment-mobile@4x.jpg 2x">
+                          <img src="img/img-experiment@1x.jpg" srcset="img/img-experiment@1x.jpg 1x, img/img-experiment@2x.jpg 2x" alt="Фатальный эксперимент" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags">
                         <ul class="flags__list">
@@ -364,9 +387,7 @@
                         </ul>
                       </div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Фатальный эксперимент</h3>
-                        </a>
+                        <h3 class="card__title">Фатальный эксперимент</h3>
                         <p class="card__address">Верхнетецкая, 32</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -392,14 +413,20 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-metro-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-metro@2x.webp 1x, img/img-metro@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-metro@1x.webp 1x, img/img-metro@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-metro-mobile@2x.jpg 1x, img/img-metro-mobile@4x.jpg 2x">
+                          <img src="img/img-metro@1x.jpg" srcset="img/img-metro@1x.jpg 1x, img/img-metro@2x.jpg 2x" alt="Метро 2033" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags"></div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Метро 2033</h3>
-                        </a>
+                        <h3 class="card__title">Метро 2033</h3>
                         <p class="card__address">Новослободская, 2а</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -425,14 +452,20 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-attic-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-attic@2x.webp 1x, img/img-attic@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-attic@1x.webp 1x, img/img-attic@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-attic-mobile@2x.jpg 1x, img/img-attic-mobile@4x.jpg 2x">
+                          <img src="img/img-attic@1x.jpg" srcset="img/img-attic@1x.jpg 1x, img/img-attic@2x.jpg 2x" alt="Старый чердак" width="344" height="232">
+                        </picture>
                       </div>
                       <div class="card__flags flags"></div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Старый чердак</h3>
-                        </a>
+                        <h3 class="card__title">Старый чердак</h3>
                         <p class="card__address">Новослободская, 2а</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -458,14 +491,22 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-frontier-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-frontier@2x.webp 1x, img/img-frontier@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-frontier@1x.webp 1x, img/img-frontier@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-frontier-mobile@2x.jpg 1x, img/img-frontier-mobile@4x.jpg 2x">
+                          <img src="img/img-frontier@1x.jpg" srcset="img/img-frontier@1x.jpg 1x, img/img-frontier@2x.jpg 2x" alt="Последний рубеж" width="344" height="232">
+                        </picture>
+
                       </div>
                       <div class="card__flags flags"></div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Последний рубеж</h3>
-                        </a>
+                        <h3 class="card__title">Последний рубеж</h3>
                         <p class="card__address">Верхнетецкая, 32</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -491,14 +532,22 @@
 
                   <li class="catalog__cards-item card">
                     <div class="card__container">
+                      <a class="card__link" href="#">
+                        <span class="visually-hidden">Квест</span>
+                      </a>
                       <div class="card__picture">
-                        <img src="img/img-catalog-mars-desktop@1x.jpg" alt="Склеп" width="344" height="232">
+
+                        <picture>
+                          <!-- <source type="image/webp" media="(max-width: 767px)" srcset="img/img-mars@2x.webp 1x, img/img-mars@4x.webp 2x">
+                          <source type="image/webp" srcset="img/img-mars@1x.webp 1x, img/img-mars@2x.webp 2x"> -->
+                          <source media="(max-width: 767px)" srcset="img/img-mars-mobile@2x.jpg 1x, img/img-mars-mobile@4x.jpg 2x">
+                          <img src="img/img-mars@1x.jpg" srcset="img/img-mars@1x.jpg 1x, img/img-mars@2x.jpg 2x" alt="Марс-2056" width="344" height="232">
+                        </picture>
+
                       </div>
                       <div class="card__flags flags"></div>
                       <div class="card__info">
-                        <a class="card__link" href="#">
-                          <h3 class="card__title">Марс-2056</h3>
-                        </a>
+                        <h3 class="card__title">Марс-2056</h3>
                         <p class="card__address">пр. Ленина, 37</p>
                         <div class="card__parameters">
                           <ul class="card__parameters-list">
@@ -527,6 +576,12 @@
         </section>
       </div>
     </main>
+
+    <div class="fade">
+      <div class="fade__container">
+        <div class="fade__shadow"></div>
+      </div>
+    </div>
 
     <section class="modal modal--closed modal-city">
       <div class="modal__container modal-city__container">
@@ -573,7 +628,7 @@
               <input type="text" placeholder="Имя" id="username">
             </li>
             <li class="form__field">
-              <label for="email">Чтобы вы получили ответ, оставьте ваш e-mail</label>
+              <label for="email">Чтобы вы получили ответ, оставьте ваш e‑mail</label>
               <input type="email" placeholder="Email" id="email">
             </li>
             <li class="form__field">
@@ -582,11 +637,15 @@
             </li>
           </ul>
           <div class="form__button-wrapper">
-            <button class="form__button" type="submit">Отправить вопрос</button>
+            <button class="form__button" type="submit" disabled>Отправить вопрос</button>
           </div>
           <div class="form__eula">
             <input class="visually-hidden" type="checkbox" id="eula">
-            <label for="eula">Я согласен с <a class="form__eula-link" href="#">правилами обработки персональных данных</a> и пользовательским соглашением</label>
+            <label for="eula">
+              <span>Я согласен с</span>
+              <a href="#">правилами обработки персональных данных</a>
+              <span>и пользовательским соглашением</span>
+            </label>
           </div>
         </form>
       </div>

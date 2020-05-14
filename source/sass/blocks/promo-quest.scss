@@ -1,11 +1,10 @@
 .promo-quest {
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
-  align-items: center;
+  justify-content: center;
   width: 100%;
-  min-height: 611px;
-  height: 100%;
 }
 
 .promo-quest__container {
@@ -14,19 +13,19 @@
   margin: 0 auto;
 
   &--maniac {
-    padding-bottom: 90px;
+    padding-bottom: 127px;
   }
 
   &--mansion {
-    padding-bottom: 4px;
+    padding-bottom: 38px;
   }
 
   &--ritual {
-    padding-bottom: 93px;
+    padding-bottom: 128px;
   }
 
   &--experiment {
-    padding-bottom: 45px;
+    padding-bottom: 80px;
   }
 }
 
@@ -78,14 +77,15 @@
 
 @media (max-width: $tablet-width) {
   .promo-quest__container {
-    padding: 0;
+    padding: 100px 0 38px;
   }
 
   .promo-quest__info {
     width: 100%;
-    max-width: 570px;
+    max-width: 670px;
     margin: 0 auto;
-    padding: 100px 0 38px;
+    padding: 0;
+    padding-right: 100px;
   }
 
   .promo-quest__category,
@@ -145,20 +145,20 @@
   }
 
   .promo-quest__container {
-    padding-top: 7px;
+    padding: 7px 0 0;
   }
 
   .promo-quest__info {
     max-width: 500px;
     margin: 0;
-    padding: 287px 0 38px;
+    padding: 285px 0 38px;
 
     &--long-title {
-      padding-top: 180px;
+      padding-top: 178px;
     }
 
     &--no-catalog {
-      padding-top: 261px;
+      padding-top: 287px;
     }
   }
 
@@ -166,7 +166,7 @@
   .promo-quest__title,
   .promo-quest__description {
     box-sizing: border-box;
-    padding: 0 4.444444%;
+    padding: 0 16px;
   }
 
   .promo-quest__title {
@@ -187,6 +187,6 @@
   }
 
   .promo-quest__button {
-    margin: 0 4.444444% 20px;
+    margin: 0 16px 20px;
   }
 }

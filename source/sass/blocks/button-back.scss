@@ -4,7 +4,7 @@
 
 @media (max-width: $mobile-width) {
   .button-back {
-    display: block;
+    display: inline-block;
     margin-left: 10px;
     padding-left: 20px;
     font-family: $raleway-bold;
@@ -20,5 +20,18 @@
     background-repeat: no-repeat;
     background-position: 4px 2px;
     background-size: 9px 12px;
+
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+
+    &:active {
+      opacity: 0.4;
+    }
+
+    &--hidden {
+      display: none;
+    }
   }
 }

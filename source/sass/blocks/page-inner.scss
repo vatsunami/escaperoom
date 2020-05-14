@@ -1,44 +1,15 @@
 .page-inner {
-  position: fixed;
-  top: 109px;
   display: flex;
-  width: 100%;
   flex-direction: column;
   flex-grow: 1;
-  height: calc(100% - 157px);
+  width: 100%;
+  height: 100%;
   overflow-y: scroll;
-
-  &--overflow {
-    height: calc(100% - 105px);
-  }
-}
-
-.page-inner__container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  max-width: 1366px;
-  width: 100%;
-  margin: 0 auto;
 }
 
 @media (max-width: $tablet-width) {
   .page-inner {
-    position: static;
-
-    &--active-js {
-      position: fixed;
-      top: 105px;
-      height: calc(100% - 105px);
-    }
-  }
-}
-
-@media (max-width: $mobile-width) {
-  .page-inner {
-    position: static;
-    min-height: auto;
     height: auto;
-    overflow-y: auto;
+    overflow: auto;
   }
 }

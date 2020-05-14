@@ -1,5 +1,19 @@
 .logo {
+  display: block;
+  width: 134px;
+  height: 52px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.4;
+  }
+
   img {
+    display: block;
     width: 134px;
     height: 52px;
   }

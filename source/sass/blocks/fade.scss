@@ -1,0 +1,31 @@
+.fade {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.fade__container {
+  box-sizing: border-box;
+  max-width: 1366px;
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  padding: 0 150px 0 135px;
+}
+
+.fade__shadow {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(180deg, rgba(19, 18, 18, 0) 0%, #131212 100%);
+  opacity: 0.8;
+}
+
+@media (max-width: $tablet-width) {
+  .fade__container {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+  }
+}

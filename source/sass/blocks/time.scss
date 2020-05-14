@@ -77,12 +77,14 @@
 }
 
 .time__input:checked ~ .time__label {
-  border-color: transparent;
+  padding: 9px 0 6px;
+  border: none;
   background-image: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
 }
 
 .time__input:disabled ~ .time__label {
-  border-color: transparent;
+  padding: 9px 0 6px;
+  border: none;
   background-image: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
 }
 
@@ -97,6 +99,7 @@
   letter-spacing: 0.05em;
   border: 2px solid #c4c4c4;
   border-radius: 65px;
+  cursor: pointer;
 }
 
 .time__price {
