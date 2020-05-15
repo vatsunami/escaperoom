@@ -151,7 +151,7 @@
 })();
 
 
-(function modalQustion() {
+(function modalQuestion() {
   var ESC_KEYCODE = 27;
   var modal = document.querySelector('.modal-question');
 
