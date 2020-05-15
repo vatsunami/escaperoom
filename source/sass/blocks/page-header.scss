@@ -22,8 +22,6 @@
 
 @media (max-width: $tablet-width) {
   .page-header {
-    // min-height: 105px;
-
     &--opened {
       position: fixed;
       top: 0;
@@ -70,10 +68,6 @@
 
 
 @media (max-width: $mobile-width) {
-  .page-header {
-    // min-height: 82px;
-  }
-
   .page-header__top {
     padding: 19px 14px 4px;
   }
