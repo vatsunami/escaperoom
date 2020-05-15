@@ -4,14 +4,6 @@
   justify-content: flex-end;
   flex-shrink: 0;
   width: 140px;
-  font-family: $raleway-bold;
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 14px;
-  letter-spacing: 0.02em;
-  color: $color-orange;
-  text-decoration: none;
-  text-transform: uppercase;
 }
 
 .location__icon {
@@ -25,6 +17,15 @@
   align-self: flex-start;
   padding-top: 4px;
   padding-bottom: 4px;
+  font-family: $raleway-bold;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  color: $color-orange;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
 
   &:hover,
   &:focus {
