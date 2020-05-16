@@ -5,6 +5,12 @@
   width: 100%;
   height: 100%;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.page-inner::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: $tablet-width) {

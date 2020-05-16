@@ -598,30 +598,6 @@ img {
   background-position: 0 0;
 }
 
-.webp .page-wrapper--maniac {
-  background-image: url("../img/bg-maniac-desktop@1x.webp");
-}
-
-.webp .page-wrapper--bg-blur {
-  background-image: url("../img/bg-maniac-blur-desktop.webp");
-}
-
-.webp .page-wrapper--mansion {
-  background-image: url("../img/bg-mansion-desktop@1x.webp");
-}
-
-.webp .page-wrapper--ritual {
-  background-image: url("../img/bg-ritual-desktop@1x.webp");
-}
-
-.webp .page-wrapper--experiment {
-  background-image: url("../img/bg-experiment-desktop@1x.webp");
-}
-
-.webp .page-wrapper--promo {
-  background-image: url("../img/bg-main-desktop@1x.webp");
-}
-
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
   .page-wrapper--maniac {
     background-image: url("../img/bg-maniac-desktop@2x.jpg");
@@ -642,31 +618,10 @@ img {
   .page-wrapper--promo {
     background-image: url("../img/bg-main-desktop@2x.jpg");
   }
-
-  .webp .page-wrapper--maniac {
-    background-image: url("../img/bg-maniac-desktop@2x.webp");
-  }
-
-  .webp .page-wrapper--mansion {
-    background-image: url("../img/bg-mansion-desktop@2x.webp");
-  }
-
-  .webp .page-wrapper--ritual {
-    background-image: url("../img/bg-ritual-desktop@2x.webp");
-  }
-
-  .webp .page-wrapper--experiment {
-    background-image: url("../img/bg-experiment-desktop@2x.webp");
-  }
-
-  .webp .page-wrapper--promo {
-    background-image: url("../img/bg-main-desktop@2x.webp");
-  }
 }
 
 @media (max-width: 1023px) {
   .page-wrapper {
-    height: auto;
     min-height: 100%;
     background-position: top 0 right 0;
   }
@@ -694,26 +649,6 @@ img {
   .page-wrapper--promo {
     background-image: url("../img/bg-main-tablet@1x.jpg");
   }
-
-  .webp .page-wrapper--maniac {
-    background-image: url("../img/bg-maniac-tablet@1x.webp");
-  }
-
-  .webp .page-wrapper--mansion {
-    background-image: url("../img/bg-mansion-tablet@1x.webp");
-  }
-
-  .webp .page-wrapper--ritual {
-    background-image: url("../img/bg-ritual-tablet@1x.webp");
-  }
-
-  .webp .page-wrapper--experiment {
-    background-image: url("../img/bg-experiment-tablet@1x.webp");
-  }
-
-  .webp .page-wrapper--promo {
-    background-image: url("../img/bg-main-tablet@1x.webp");
-  }
 }
 
 @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (min-resolution: 144dpi), (max-width: 1023px) and (min-resolution: 1.5dppx) {
@@ -735,26 +670,6 @@ img {
 
   .page-wrapper--promo {
     background-image: url("../img/bg-main-tablet@2x.jpg");
-  }
-
-  .webp .page-wrapper--maniac {
-    background-image: url("../img/bg-maniac-tablet@2x.webp");
-  }
-
-  .webp .page-wrapper--mansion {
-    background-image: url("../img/bg-mansion-tablet@2x.webp");
-  }
-
-  .webp .page-wrapper--ritual {
-    background-image: url("../img/bg-ritual-tablet@2x.webp");
-  }
-
-  .webp .page-wrapper--experiment {
-    background-image: url("../img/bg-experiment-tablet@2x.webp");
-  }
-
-  .webp .page-wrapper--promo {
-    background-image: url("../img/bg-main-tablet@2x.webp");
   }
 }
 
@@ -790,30 +705,6 @@ img {
     background-image: url("../img/bg-main-mobile@1x.jpg");
     background-size: cover;
   }
-
-  .webp .page-wrapper--maniac {
-    background-image: url("../img/bg-maniac-mobile@1x.webp");
-  }
-
-  .webp .page-wrapper--bg-blur {
-    background-image: url("../img/bg-maniac-blur-mobile.webp");
-  }
-
-  .webp .page-wrapper--mansion {
-    background-image: url("../img/bg-mansion-mobile@1x.webp");
-  }
-
-  .webp .page-wrapper--ritual {
-    background-image: url("../img/bg-ritual-mobile@1x.webp");
-  }
-
-  .webp .page-wrapper--experiment {
-    background-image: url("../img/bg-experiment-mobile@1x.webp");
-  }
-
-  .webp .page-wrapper--promo {
-    background-image: url("../img/bg-main-mobile@1x.webp");
-  }
 }
 
 @media (max-width: 767px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 767px) and (min-resolution: 144dpi), (max-width: 767px) and (min-resolution: 1.5dppx) {
@@ -836,26 +727,6 @@ img {
   .page-wrapper--promo {
     background-image: url("../img/bg-main-mobile@2x.jpg");
   }
-
-  .webp .page-wrapper--maniac {
-    background-image: url("../img/bg-maniac-mobile@2x.webp");
-  }
-
-  .webp .page-wrapper--mansion {
-    background-image: url("../img/bg-mansion-mobile@2x.webp");
-  }
-
-  .webp .page-wrapper--ritual {
-    background-image: url("../img/bg-ritual-mobile@2x.webp");
-  }
-
-  .webp .page-wrapper--experiment {
-    background-image: url("../img/bg-experiment-mobile@2x.webp");
-  }
-
-  .webp .page-wrapper--promo {
-    background-image: url("../img/bg-main-mobile@2x.webp");
-  }
 }
 
 .fade {
@@ -863,7 +734,7 @@ img {
   bottom: 0;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
 }
 
 .fade__container {
@@ -1543,6 +1414,7 @@ img {
   left: 0;
   width: 100%;
   background-color: transparent;
+  z-index: 4;
 }
 
 .page-footer__container {
@@ -1986,6 +1858,12 @@ img {
   width: 100%;
   height: 100%;
   overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.page-inner::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 1023px) {

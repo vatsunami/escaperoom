@@ -36,32 +36,6 @@
   }
 }
 
-.webp .page-wrapper {
-  &--maniac {
-    background-image: url("../img/bg-maniac-desktop@1x.webp");
-  }
-
-  &--bg-blur {
-    background-image: url("../img/bg-maniac-blur-desktop.webp");
-  }
-
-  &--mansion {
-    background-image: url("../img/bg-mansion-desktop@1x.webp");
-  }
-
-  &--ritual {
-    background-image: url("../img/bg-ritual-desktop@1x.webp");
-  }
-
-  &--experiment {
-    background-image: url("../img/bg-experiment-desktop@1x.webp");
-  }
-
-  &--promo {
-    background-image: url("../img/bg-main-desktop@1x.webp");
-  }
-}
-
 
 @media (min-resolution: 144dpi),
   (min-resolution: 1.5dppx) {
@@ -86,34 +60,11 @@
       background-image: url("../img/bg-main-desktop@2x.jpg");
     }
   }
-
-  .webp .page-wrapper {
-    &--maniac {
-      background-image: url("../img/bg-maniac-desktop@2x.webp");
-    }
-
-    &--mansion {
-      background-image: url("../img/bg-mansion-desktop@2x.webp");
-    }
-
-    &--ritual {
-      background-image: url("../img/bg-ritual-desktop@2x.webp");
-    }
-
-    &--experiment {
-      background-image: url("../img/bg-experiment-desktop@2x.webp");
-    }
-
-    &--promo {
-      background-image: url("../img/bg-main-desktop@2x.webp");
-    }
-  }
 }
 
 
 @media (max-width: $tablet-width) {
   .page-wrapper {
-    height: auto;
     min-height: 100%;
     background-position: top 0 right 0;
 
@@ -142,28 +93,6 @@
     }
   }
 
-  .webp .page-wrapper {
-    &--maniac {
-      background-image: url("../img/bg-maniac-tablet@1x.webp");
-    }
-
-    &--mansion {
-      background-image: url("../img/bg-mansion-tablet@1x.webp");
-    }
-
-    &--ritual {
-      background-image: url("../img/bg-ritual-tablet@1x.webp");
-    }
-
-    &--experiment {
-      background-image: url("../img/bg-experiment-tablet@1x.webp");
-    }
-
-    &--promo {
-      background-image: url("../img/bg-main-tablet@1x.webp");
-    }
-  }
-
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
@@ -186,28 +115,6 @@
 
       &--promo {
         background-image: url("../img/bg-main-tablet@2x.jpg");
-      }
-    }
-
-    .webp .page-wrapper {
-      &--maniac {
-        background-image: url("../img/bg-maniac-tablet@2x.webp");
-      }
-
-      &--mansion {
-        background-image: url("../img/bg-mansion-tablet@2x.webp");
-      }
-
-      &--ritual {
-        background-image: url("../img/bg-ritual-tablet@2x.webp");
-      }
-
-      &--experiment {
-        background-image: url("../img/bg-experiment-tablet@2x.webp");
-      }
-
-      &--promo {
-        background-image: url("../img/bg-main-tablet@2x.webp");
       }
     }
   }
@@ -247,32 +154,6 @@
     }
   }
 
-  .webp .page-wrapper {
-    &--maniac {
-      background-image: url("../img/bg-maniac-mobile@1x.webp");
-    }
-
-    &--bg-blur {
-      background-image: url("../img/bg-maniac-blur-mobile.webp");
-    }
-
-    &--mansion {
-      background-image: url("../img/bg-mansion-mobile@1x.webp");
-    }
-
-    &--ritual {
-      background-image: url("../img/bg-ritual-mobile@1x.webp");
-    }
-
-    &--experiment {
-      background-image: url("../img/bg-experiment-mobile@1x.webp");
-    }
-
-    &--promo {
-      background-image: url("../img/bg-main-mobile@1x.webp");
-    }
-  }
-
 
   @media (min-resolution: 144dpi),
     (min-resolution: 1.5dppx) {
@@ -295,28 +176,6 @@
 
       &--promo {
         background-image: url("../img/bg-main-mobile@2x.jpg");
-      }
-    }
-
-    .webp .page-wrapper {
-      &--maniac {
-        background-image: url("../img/bg-maniac-mobile@2x.webp");
-      }
-
-      &--mansion {
-        background-image: url("../img/bg-mansion-mobile@2x.webp");
-      }
-
-      &--ritual {
-        background-image: url("../img/bg-ritual-mobile@2x.webp");
-      }
-
-      &--experiment {
-        background-image: url("../img/bg-experiment-mobile@2x.webp");
-      }
-
-      &--promo {
-        background-image: url("../img/bg-main-mobile@2x.webp");
       }
     }
   }
