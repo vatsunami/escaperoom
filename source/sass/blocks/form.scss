@@ -85,6 +85,7 @@
 
 .form__input-title {
   display: none;
+  width: calc(100% - 40px);
   margin: 0 20px;
   padding: 0 4px;
   color: #e6e6e6;
