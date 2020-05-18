@@ -33,6 +33,7 @@
 
 .form__field input:focus ~ .form__input-title {
   display: inline-block;
+  vertical-align: top;
 }
 
 .form__field input,
