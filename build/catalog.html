@@ -556,22 +556,34 @@
           <ul class="form__fields">
             <li class="form__field">
               <label for="username">Чтобы мы смогли обращаться к вам, оставьте ваше имя</label>
-              <input type="text" placeholder="Имя" id="username">
+              <div class="form__input-wrapper">
+                <input type="text" placeholder="Имя" id="username" name="username" required="">
+                <span class="form__input-title">Имя</span>
+                <div class="form__input-message">
+                  <p class="form__input-message-text form__input-message-text--hidden">Введено некорректное имя, попробуйте заново</p>
+                </div>
+              </div>
             </li>
             <li class="form__field">
               <label for="email">Чтобы вы получили ответ, оставьте ваш e‑mail</label>
-              <input type="email" placeholder="Email" id="email">
+              <div class="form__input-wrapper">
+                <input type="email" placeholder="Email" id="email" name="email" required="">
+                <span class="form__input-title">E-mail</span>
+                <div class="form__input-message">
+                  <p class="form__input-message-text form__input-message-text--hidden">Введен некорректный e‑mail, попробуйте заново</p>
+                </div>
+              </div>
             </li>
             <li class="form__field">
               <label for="message">Ваш вопрос:</label>
-              <textarea name="question" placeholder="Начните вводить …" rows="4" cols="40" id="message"></textarea>
+              <textarea name="question" placeholder="Начните вводить …" rows="4" cols="40" id="message" required=""></textarea>
             </li>
           </ul>
           <div class="form__button-wrapper">
             <button class="form__button" type="submit" disabled="">Отправить вопрос</button>
           </div>
           <div class="form__eula">
-            <input class="visually-hidden" type="checkbox" id="eula">
+            <input class="visually-hidden" type="checkbox" id="eula" name="eula">
             <label for="eula">
               <span>Я согласен с</span>
               <a href="#">правилами обработки персональных данных</a>

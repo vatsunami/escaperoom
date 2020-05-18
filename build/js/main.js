@@ -160,6 +160,19 @@
     var container = modal.querySelector('.modal-question__container');
     var buttonOpen = document.querySelector('.question');
     var buttonClose = modal.querySelector('.modal__button-close');
+    var form = modal.querySelector('.form');
+    var eula = form.querySelector('[id=eula]');
+    var username = form.querySelector('[id=username]');
+    var email = form.querySelector('[id=email]');
+    var message = form.querySelector('[id=message]');
+    var isStorageSupport = true;
+    var storage = '';
+
+    try {
+      storage = localStorage.getItem('username');
+    } catch (err) {
+      isStorageSupport = false;
+    }
 
     var showModal = function () {
       document.body.classList.add('noscroll--modal-question');
@@ -170,6 +183,12 @@
       buttonClose.addEventListener('click', onButtonCloseClick);
       modal.addEventListener('click', onOverlayClick);
       document.addEventListener('keydown', onEscPress);
+
+      if (isStorageSupport && storage) {
+        username.value = localStorage.getItem('username');
+        email.value = localStorage.getItem('email');
+        message.focus();
+      }
     };
 
     var hideModal = function () {
@@ -184,16 +203,20 @@
     };
 
     var onOverlayClick = function (evt) {
+      var target = evt.target;
+
       var clickCoordinates = {
         x: evt.clientX,
         y: evt.clientY
       };
 
-      if (clickCoordinates.x < container.offsetLeft ||
-        clickCoordinates.x > container.offsetLeft + container.offsetWidth ||
-        clickCoordinates.y < container.offsetTop ||
-        clickCoordinates.y > container.offsetTop + container.offsetHeight) {
-        hideModal();
+      if (target !== eula) {
+        if (clickCoordinates.x < container.offsetLeft ||
+          clickCoordinates.x > container.offsetLeft + container.offsetWidth ||
+          clickCoordinates.y < container.offsetTop ||
+          clickCoordinates.y > container.offsetTop + container.offsetHeight) {
+          hideModal();
+        }
       }
     };
 
@@ -213,7 +236,15 @@
       hideModal();
     };
 
+    var onFormSubmit = function () {
+      if (isStorageSupport) {
+        localStorage.setItem('username', username.value);
+        localStorage.setItem('email', email.value);
+      }
+    };
+
     buttonOpen.addEventListener('click', onButtonOpenClick);
+    form.addEventListener('submit', onFormSubmit);
   }
 
 })();
@@ -335,6 +366,111 @@
         }, window.resizeInterval);
       }
     });
+  }
+
+})();
+
+
+(function formQuestion() {
+
+  var form = document.querySelector('.modal-question__form');
+
+
+  if (form) {
+    var name = form.querySelector('[id=username]');
+    var nameWrapper = name.parentNode;
+    var nameMessage = nameWrapper.querySelector('.form__input-message-text');
+    var email = form.querySelector('[id=email]');
+    var emailWrapper = email.parentNode;
+    var emailMessage = emailWrapper.querySelector('.form__input-message-text');
+    var buttonSubmit = form.querySelector('.form__button');
+    var message = form.querySelector('[id=message]');
+    var eula = form.querySelector('[id=eula]');
+
+    var formFieldsValidationStatus = {
+      name: false,
+      email: false,
+      message: false
+    };
+
+    var markFieldAsValid = function (field, fieldWrapper, fieldMessage) {
+      fieldWrapper.classList.add('form__input-wrapper--valid');
+      fieldWrapper.classList.remove('form__input-wrapper--invalid');
+      fieldMessage.classList.add('form__input-message-text--hidden');
+    };
+
+    var markFieldAsInvalid = function (field, fieldWrapper, fieldMessage) {
+      fieldWrapper.classList.remove('form__input-wrapper--valid');
+      fieldWrapper.classList.add('form__input-wrapper--invalid');
+      fieldMessage.classList.remove('form__input-message-text--hidden');
+    };
+
+    var returnFieldToStart = function (field, fieldWrapper, fieldMessage) {
+      fieldWrapper.classList.remove('form__input-wrapper--valid');
+      fieldWrapper.classList.remove('form__input-wrapper--invalid');
+      fieldMessage.classList.add('form__input-message-text--hidden');
+    };
+
+    var checkAllFieldsValidity = function () {
+      if (formFieldsValidationStatus.name &&
+        formFieldsValidationStatus.email &&
+        formFieldsValidationStatus.message &&
+        eula.checked) {
+        buttonSubmit.disabled = false;
+      } else {
+        buttonSubmit.disabled = true;
+      }
+    };
+
+    var onEulaChange = function () {
+      checkAllFieldsValidity();
+    };
+
+    var onNameChange = function () {
+      if (name.value.length > 2) {
+        markFieldAsValid(name, nameWrapper, nameMessage);
+        formFieldsValidationStatus.name = true;
+      } else {
+        markFieldAsInvalid(name, nameWrapper, nameMessage);
+        formFieldsValidationStatus.name = false;
+      }
+
+      if (name.value === '') {
+        returnFieldToStart(name, nameWrapper, nameMessage);
+        formFieldsValidationStatus.name = false;
+      }
+      checkAllFieldsValidity();
+    };
+
+    var onEmailChange = function () {
+      if (email.validity.valid) {
+        markFieldAsValid(email, emailWrapper, emailMessage);
+        formFieldsValidationStatus.email = true;
+      } else {
+        markFieldAsInvalid(email, emailWrapper, emailMessage);
+        formFieldsValidationStatus.email = false;
+      }
+
+      if (email.value === '') {
+        returnFieldToStart(email, emailWrapper, emailMessage);
+        formFieldsValidationStatus.email = false;
+      }
+      checkAllFieldsValidity();
+    };
+
+    var onMessageChange = function () {
+      if (message.value !== '') {
+        formFieldsValidationStatus.message = true;
+      } else {
+        formFieldsValidationStatus.message = false;
+      }
+      checkAllFieldsValidity();
+    };
+
+    name.addEventListener('change', onNameChange);
+    email.addEventListener('change', onEmailChange);
+    message.addEventListener('change', onMessageChange);
+    eula.addEventListener('change', onEulaChange);
   }
 
 })();

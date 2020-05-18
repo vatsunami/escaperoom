@@ -9,17 +9,30 @@
 
 .form__field {
   &:not(:last-of-type) {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
 }
 
 .form__field label {
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 6px;
   font-family: $raleway-medium;
   font-weight: 500;
   font-size: 15px;
   line-height: 23px;
+}
+
+.form__field input {
+  margin-top: 8px;
+  order: 2;
+}
+
+.form__field input:focus {
+  margin-top: -9px;
+}
+
+.form__field input:focus ~ .form__input-title {
+  display: inline-block;
 }
 
 .form__field input,
@@ -48,8 +61,63 @@
   opacity: 0.64;
 }
 
+.form__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &--valid input {
+    border-color: #2cdb52;
+  }
+
+  &--invalid input {
+    border-color: #f2890f;
+  }
+}
+
+.form__input-title,
+.form__input-message-text {
+  box-sizing: border-box;
+  font-size: 12px;
+  line-height: 17px;
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.form__input-title {
+  display: none;
+  margin: 0 20px;
+  padding: 0 4px;
+  color: #e6e6e6;
+  vertical-align: top;
+  background-color: #1d1c1c;
+  order: 1;
+  z-index: 3;
+}
+
+.form__input-message {
+  box-sizing: border-box;
+  display: block;
+  min-height: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0 24px;
+  padding-top: 3px;
+  order: 3;
+}
+
+.form__input-message-text {
+  display: block;
+  margin: 0;
+  color: $color-orange;
+
+  &--hidden {
+    display: none;
+  }
+}
+
 .form__field textarea {
   height: 120px;
+  margin-top: 14px;
   padding-top: 13px;
   resize: none;
 }
@@ -106,6 +174,10 @@
   }
 }
 
+.form__eula input:focus ~ label::before {
+  opacity: 0.8;
+}
+
 .form__eula input:checked ~ label::before {
   background-image: url("../img/icon-check.svg");
   background-repeat: no-repeat;
@@ -126,7 +198,7 @@
   }
 
   .form__field label {
-    margin-bottom: 13px;
+    margin-bottom: 5px;
   }
 
   .form__field textarea {
