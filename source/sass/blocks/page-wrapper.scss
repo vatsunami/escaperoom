@@ -123,6 +123,7 @@
 
 @media (max-width: $mobile-width) {
   .page-wrapper {
+    height: auto;
     background-position: center top;
     background-size: cover;
 

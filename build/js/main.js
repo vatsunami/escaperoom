@@ -215,4 +215,126 @@
 
     buttonOpen.addEventListener('click', onButtonOpenClick);
   }
+
+})();
+
+
+(function sliderCategories() {
+  var slider = document.querySelector('.catalog-category');
+
+  if (slider) {
+    var container = slider.querySelector('.catalog-category__container');
+    var list = container.querySelector('.catalog-category__list');
+    var items = list.querySelectorAll('.catalog-category__item');
+    var itemsArray = [].slice.call(items);
+
+    var getTotalItemsWidth = function () {
+      var sum = 0;
+      itemsArray.forEach(function (item) {
+        sum += item.offsetWidth;
+      });
+      return sum;
+    };
+
+    var returnListToStart = function () {
+      list.style.left = 0;
+    };
+
+    var moveListByX = function (listX) {
+      if (listX > container.offsetWidth - list.offsetWidth) {
+        listX = container.offsetWidth - list.offsetWidth;
+      }
+      if (listX < container.offsetWidth - getTotalItemsWidth()) {
+        listX = container.offsetWidth - getTotalItemsWidth();
+      }
+      list.style.left = listX + 'px';
+    };
+
+
+    var onListMouseDown = function (evt) {
+      evt.preventDefault();
+
+      var startCoordinateX = evt.clientX;
+
+      var onListMouseMove = function (moveEvt) {
+        moveEvt.preventDefault();
+
+        var shift = startCoordinateX - moveEvt.clientX;
+        startCoordinateX = moveEvt.clientX;
+
+        var listX = list.offsetLeft - shift;
+
+        moveListByX(listX);
+      };
+
+      var onListMouseUp = function (upEvt) {
+        upEvt.preventDefault();
+        list.removeEventListener('mousemove', onListMouseMove);
+        list.removeEventListener('mouseup', onListMouseUp);
+      };
+
+      var onListMouseLeave = function (leaveEvt) {
+        leaveEvt.preventDefault();
+        list.removeEventListener('mousemove', onListMouseMove);
+        list.removeEventListener('mousemup', onListMouseUp);
+        list.removeEventListener('mouseleave', onListMouseLeave);
+      };
+
+      list.addEventListener('mousemove', onListMouseMove);
+      list.addEventListener('mouseup', onListMouseUp);
+      list.addEventListener('mouseleave', onListMouseLeave);
+    };
+
+
+    var onListTouchStart = function (evt) {
+      var startCoordinateX = evt.touches[0].clientX;
+
+      var onListTouchMove = function (moveEvt) {
+        var shift = startCoordinateX - moveEvt.touches[0].clientX;
+
+        startCoordinateX = moveEvt.touches[0].clientX;
+
+        var listX = list.offsetLeft - shift;
+
+        moveListByX(listX);
+      };
+
+      var onListTouchEnd = function () {
+        list.removeEventListener('touchmove', onListTouchMove, {passive: true});
+        list.removeEventListener('touchend', onListTouchEnd, {passive: true});
+      };
+
+      list.addEventListener('touchmove', onListTouchMove, {passive: true});
+      list.addEventListener('touchend', onListTouchEnd, {passive: true});
+    };
+
+
+    var addListEventListeners = function () {
+      list.addEventListener('mousedown', onListMouseDown);
+      list.addEventListener('touchstart', onListTouchStart, {passive: true});
+    };
+
+    var removeListEventListeners = function () {
+      list.removeEventListener('mousedown', onListMouseDown);
+      list.removeEventListener('touchstart', onListTouchStart, {passive: true});
+    };
+
+    if (container.offsetWidth < getTotalItemsWidth()) {
+      addListEventListeners();
+    }
+
+    window.addEventListener('resize', function () {
+      var resizeTimeout;
+      if (!resizeTimeout) {
+        resizeTimeout = setTimeout(function () {
+          removeListEventListeners();
+          if (container.offsetWidth < getTotalItemsWidth()) {
+            addListEventListeners();
+          }
+          returnListToStart();
+        }, window.resizeInterval);
+      }
+    });
+  }
+
 })();
