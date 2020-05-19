@@ -3243,7 +3243,13 @@ img {
   font-feature-settings: "pnum" on, "lnum" on;
 }
 
-.time__input ~ .time__label:hover {
+.time__input ~ .time__label:hover,
+.time__input:focus ~ .time__label:hover,
+.time__input:checked ~ .time__label:hover {
+  opacity: 0.8;
+}
+
+.time__input:focus ~ .time__label {
   opacity: 0.8;
 }
 
@@ -3253,11 +3259,6 @@ img {
   border: none;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#2cdb52), to(#13ba19));
   background-image: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
-}
-
-.time__input:focus ~ .time__label:hover,
-  .time__input:checked ~ .time__label:hover {
-  opacity: 1;
 }
 
 .time__input:disabled ~ .time__label {

@@ -76,10 +76,16 @@
   font-feature-settings: "pnum" on, "lnum" on;
 }
 
-.time__input ~ .time__label {
+.time__input ~ .time__label,
+.time__input:focus ~ .time__label,
+.time__input:checked ~ .time__label {
   &:hover {
     opacity: 0.8;
   }
+}
+
+.time__input:focus ~ .time__label {
+  opacity: 0.8;
 }
 
 .time__input:focus ~ .time__label,
@@ -87,10 +93,6 @@
   padding: 9px 0 6px;
   border: none;
   background-image: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
-
-  &:hover {
-    opacity: 1;
-  }
 }
 
 .time__input:disabled ~ .time__label {
