@@ -160,11 +160,18 @@
     var container = modal.querySelector('.modal-question__container');
     var buttonOpen = document.querySelector('.question');
     var buttonClose = modal.querySelector('.modal__button-close');
+
     var form = modal.querySelector('.form');
-    var eula = form.querySelector('[id=eula]');
     var username = form.querySelector('[id=username]');
+    var usernameWrapper = username.parentNode;
+    var usernameMessage = usernameWrapper.querySelector('.form__input-message-text');
     var email = form.querySelector('[id=email]');
+    var emailWrapper = email.parentNode;
+    var emailMessage = emailWrapper.querySelector('.form__input-message-text');
     var message = form.querySelector('[id=message]');
+    var buttonSubmit = form.querySelector('.form__button');
+    var eula = form.querySelector('[id=eula]');
+
     var isStorageSupport = true;
     var storage = '';
 
@@ -189,6 +196,9 @@
         email.value = localStorage.getItem('email');
         message.focus();
       }
+
+      switchFieldStatusByValidity(username, usernameWrapper, usernameMessage, isUsernameValid());
+      switchFieldStatusByValidity(email, emailWrapper, emailMessage, isEmailValid());
     };
 
     var hideModal = function () {
@@ -200,6 +210,68 @@
       buttonClose.removeEventListener('click', onButtonCloseClick);
       modal.removeEventListener('click', onOverlayClick);
       document.removeEventListener('keydown', onEscPress);
+    };
+
+    var markFieldAsValid = function (field, fieldWrapper, fieldMessage) {
+      fieldWrapper.classList.add('form__input-wrapper--valid');
+      fieldWrapper.classList.remove('form__input-wrapper--invalid');
+      fieldMessage.classList.add('form__input-message-text--hidden');
+    };
+
+    var markFieldAsInvalid = function (field, fieldWrapper, fieldMessage) {
+      fieldWrapper.classList.remove('form__input-wrapper--valid');
+      fieldWrapper.classList.add('form__input-wrapper--invalid');
+      fieldMessage.classList.remove('form__input-message-text--hidden');
+    };
+
+    var returnFieldToStart = function (field, fieldWrapper, fieldMessage) {
+      fieldWrapper.classList.remove('form__input-wrapper--valid');
+      fieldWrapper.classList.remove('form__input-wrapper--invalid');
+      fieldMessage.classList.add('form__input-message-text--hidden');
+    };
+
+    var isUsernameValid = function () {
+      if (username.value.length > 2) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    var isEmailValid = function () {
+      if (email.validity.valid) {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    var isAllFormFieldsValid = function () {
+      if (isUsernameValid() && isEmailValid() && message.value !== '') {
+        return true;
+      } else {
+        return false;
+      }
+    };
+
+    var switchButtonSubmitDisabledAttr = function () {
+      if (isAllFormFieldsValid() && eula.checked) {
+        buttonSubmit.disabled = false;
+      } else {
+        buttonSubmit.disabled = true;
+      }
+    };
+
+    var switchFieldStatusByValidity = function (field, fieldWrapper, fieldMessage, isValid) {
+      if (isValid) {
+        markFieldAsValid(field, fieldWrapper, fieldMessage);
+      } else {
+        markFieldAsInvalid(field, fieldWrapper, fieldMessage);
+      }
+
+      if (field.value === '') {
+        returnFieldToStart(field, fieldWrapper, fieldMessage);
+      }
     };
 
     var onOverlayClick = function (evt) {
@@ -236,6 +308,24 @@
       hideModal();
     };
 
+    var onEulaChange = function () {
+      switchButtonSubmitDisabledAttr();
+    };
+
+    var onUsernameChange = function () {
+      switchFieldStatusByValidity(username, usernameWrapper, usernameMessage, isUsernameValid());
+      switchButtonSubmitDisabledAttr();
+    };
+
+    var onEmailChange = function () {
+      switchFieldStatusByValidity(email, emailWrapper, emailMessage, isEmailValid());
+      switchButtonSubmitDisabledAttr();
+    };
+
+    var onMessageChange = function () {
+      switchButtonSubmitDisabledAttr();
+    };
+
     var onFormSubmit = function () {
       if (isStorageSupport) {
         localStorage.setItem('username', username.value);
@@ -244,6 +334,10 @@
     };
 
     buttonOpen.addEventListener('click', onButtonOpenClick);
+    username.addEventListener('change', onUsernameChange);
+    email.addEventListener('change', onEmailChange);
+    message.addEventListener('change', onMessageChange);
+    eula.addEventListener('change', onEulaChange);
     form.addEventListener('submit', onFormSubmit);
   }
 
@@ -366,122 +460,6 @@
         }, window.resizeInterval);
       }
     });
-  }
-
-})();
-
-
-(function formQuestion() {
-
-  var form = document.querySelector('.modal-question__form');
-
-  if (form) {
-    var name = form.querySelector('[id=username]');
-    var nameWrapper = name.parentNode;
-    var nameMessage = nameWrapper.querySelector('.form__input-message-text');
-    var email = form.querySelector('[id=email]');
-    var emailWrapper = email.parentNode;
-    var emailMessage = emailWrapper.querySelector('.form__input-message-text');
-    var buttonSubmit = form.querySelector('.form__button');
-    var message = form.querySelector('[id=message]');
-    var eula = form.querySelector('[id=eula]');
-
-    var formFieldsValidationStatus = {
-      name: false,
-      email: false,
-      message: false
-    };
-
-    var markFieldAsValid = function (field, fieldWrapper, fieldMessage) {
-      fieldWrapper.classList.add('form__input-wrapper--valid');
-      fieldWrapper.classList.remove('form__input-wrapper--invalid');
-      fieldMessage.classList.add('form__input-message-text--hidden');
-    };
-
-    var markFieldAsInvalid = function (field, fieldWrapper, fieldMessage) {
-      fieldWrapper.classList.remove('form__input-wrapper--valid');
-      fieldWrapper.classList.add('form__input-wrapper--invalid');
-      fieldMessage.classList.remove('form__input-message-text--hidden');
-    };
-
-    var returnFieldToStart = function (field, fieldWrapper, fieldMessage) {
-      fieldWrapper.classList.remove('form__input-wrapper--valid');
-      fieldWrapper.classList.remove('form__input-wrapper--invalid');
-      fieldMessage.classList.add('form__input-message-text--hidden');
-    };
-
-    var switchButtonDisabledAttr = function () {
-      if (formFieldsValidationStatus.name &&
-        formFieldsValidationStatus.email &&
-        formFieldsValidationStatus.message &&
-        eula.checked) {
-        buttonSubmit.disabled = false;
-      } else {
-        buttonSubmit.disabled = true;
-      }
-    };
-
-    var checkNameValidity = function () {
-      if (name.value.length > 2) {
-        markFieldAsValid(name, nameWrapper, nameMessage);
-        formFieldsValidationStatus.name = true;
-      } else {
-        markFieldAsInvalid(name, nameWrapper, nameMessage);
-        formFieldsValidationStatus.name = false;
-      }
-
-      if (name.value === '') {
-        returnFieldToStart(name, nameWrapper, nameMessage);
-        formFieldsValidationStatus.name = false;
-      }
-    };
-
-    var checkEmailValidity = function () {
-      if (email.validity.valid) {
-        markFieldAsValid(email, emailWrapper, emailMessage);
-        formFieldsValidationStatus.email = true;
-      } else {
-        markFieldAsInvalid(email, emailWrapper, emailMessage);
-        formFieldsValidationStatus.email = false;
-      }
-
-      if (email.value === '') {
-        returnFieldToStart(email, emailWrapper, emailMessage);
-        formFieldsValidationStatus.email = false;
-      }
-    };
-
-    var checkMessageValidity = function () {
-      if (message.value !== '') {
-        formFieldsValidationStatus.message = true;
-      } else {
-        formFieldsValidationStatus.message = false;
-      }
-    };
-
-    var onEulaChange = function () {
-      switchButtonDisabledAttr();
-    };
-
-    var onNameChange = function () {
-      checkNameValidity();
-      switchButtonDisabledAttr();
-    };
-
-    var onEmailChange = function () {
-      checkEmailValidity();
-      switchButtonDisabledAttr();
-    };
-
-    var onMessageChange = function () {
-      checkMessageValidity();
-      switchButtonDisabledAttr();
-    };
-
-    name.addEventListener('change', onNameChange);
-    email.addEventListener('change', onEmailChange);
-    message.addEventListener('change', onMessageChange);
-    eula.addEventListener('change', onEulaChange);
   }
 
 })();
