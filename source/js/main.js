@@ -229,7 +229,7 @@
         wrapper.classList.remove('form__input-wrapper--valid');
         wrapper.classList.remove('form__input-wrapper--invalid');
         title.classList.remove('form__input-title--visible');
-        message.classList.add('form__input-message-text--hidden');
+        error.classList.add('form__input-message-text--hidden');
       }
     };
 
