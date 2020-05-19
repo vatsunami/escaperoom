@@ -738,6 +738,10 @@ img {
   z-index: 3;
 }
 
+.fade--quest {
+  display: none;
+}
+
 .fade__container {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -761,6 +765,21 @@ img {
     height: 40px;
     margin: 0;
     padding: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .fade--quest {
+    display: block;
+  }
+
+  .fade__container--quest {
+    height: 64px;
+  }
+
+  .fade__gradient--quest {
+    background-image: linear-gradient(177.83deg, rgba(99, 60, 15, 0) 23.22%, rgba(99, 60, 15, 0) 37.46%, #24150e 89.63%, #1a140d 106.79%);
+    opacity: 0.8;
   }
 }
 

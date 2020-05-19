@@ -4,6 +4,10 @@
   left: 0;
   width: 100%;
   z-index: 3;
+
+  &--quest {
+    display: none;
+  }
 }
 
 .fade__container {
@@ -27,5 +31,26 @@
     height: 40px;
     margin: 0;
     padding: 0;
+  }
+}
+
+@media (max-width: $mobile-width) {
+  .fade {
+    &--quest {
+      display: block;
+    }
+  }
+
+  .fade__container {
+    &--quest {
+      height: 64px;
+    }
+  }
+
+  .fade__gradient {
+    &--quest {
+      background-image: $gradient-fade-brown;
+      opacity: 0.8;
+    }
   }
 }
