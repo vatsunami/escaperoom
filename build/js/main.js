@@ -163,11 +163,7 @@
 
     var form = modal.querySelector('.form');
     var username = form.querySelector('[id=username]');
-    var usernameWrapper = username.parentNode;
-    var usernameMessage = usernameWrapper.querySelector('.form__input-message-text');
     var email = form.querySelector('[id=email]');
-    var emailWrapper = email.parentNode;
-    var emailMessage = emailWrapper.querySelector('.form__input-message-text');
     var message = form.querySelector('[id=message]');
     var buttonSubmit = form.querySelector('.form__button');
     var eula = form.querySelector('[id=eula]');
@@ -185,7 +181,7 @@
       document.body.classList.add('noscroll--modal-question');
       pageHeader.classList.add('page-header--modal-opened');
       modal.classList.remove('modal--closed');
-      buttonClose.focus();
+      username.focus();
       buttonOpen.removeEventListener('click', onButtonOpenClick);
       buttonClose.addEventListener('click', onButtonCloseClick);
       modal.addEventListener('click', onOverlayClick);
@@ -197,8 +193,8 @@
         message.focus();
       }
 
-      switchFieldStatusByValidity(username, usernameWrapper, usernameMessage, isUsernameValid());
-      switchFieldStatusByValidity(email, emailWrapper, emailMessage, isEmailValid());
+      switchFieldStatusByValidity(username, isUsernameValid());
+      switchFieldStatusByValidity(email, isEmailValid());
     };
 
     var hideModal = function () {
@@ -212,22 +208,29 @@
       document.removeEventListener('keydown', onEscPress);
     };
 
-    var markFieldAsValid = function (field, fieldWrapper, fieldMessage) {
-      fieldWrapper.classList.add('form__input-wrapper--valid');
-      fieldWrapper.classList.remove('form__input-wrapper--invalid');
-      fieldMessage.classList.add('form__input-message-text--hidden');
-    };
+    var markFieldByState = function (field, state) {
+      var wrapper = field.parentNode;
+      var title = wrapper.querySelector('.form__input-title');
+      var error = wrapper.querySelector('.form__input-message-text');
 
-    var markFieldAsInvalid = function (field, fieldWrapper, fieldMessage) {
-      fieldWrapper.classList.remove('form__input-wrapper--valid');
-      fieldWrapper.classList.add('form__input-wrapper--invalid');
-      fieldMessage.classList.remove('form__input-message-text--hidden');
-    };
+      if (state) {
+        wrapper.classList.add('form__input-wrapper--valid');
+        wrapper.classList.remove('form__input-wrapper--invalid');
+        title.classList.add('form__input-title--visible');
+        error.classList.add('form__input-message-text--hidden');
+      } else {
+        wrapper.classList.remove('form__input-wrapper--valid');
+        wrapper.classList.add('form__input-wrapper--invalid');
+        title.classList.add('form__input-title--visible');
+        error.classList.remove('form__input-message-text--hidden');
+      }
 
-    var returnFieldToStart = function (field, fieldWrapper, fieldMessage) {
-      fieldWrapper.classList.remove('form__input-wrapper--valid');
-      fieldWrapper.classList.remove('form__input-wrapper--invalid');
-      fieldMessage.classList.add('form__input-message-text--hidden');
+      if (field.value === '') {
+        wrapper.classList.remove('form__input-wrapper--valid');
+        wrapper.classList.remove('form__input-wrapper--invalid');
+        title.classList.remove('form__input-title--visible');
+        message.classList.add('form__input-message-text--hidden');
+      }
     };
 
     var isUsernameValid = function () {
@@ -262,15 +265,11 @@
       }
     };
 
-    var switchFieldStatusByValidity = function (field, fieldWrapper, fieldMessage, isValid) {
+    var switchFieldStatusByValidity = function (field, isValid) {
       if (isValid) {
-        markFieldAsValid(field, fieldWrapper, fieldMessage);
+        markFieldByState(field, isValid);
       } else {
-        markFieldAsInvalid(field, fieldWrapper, fieldMessage);
-      }
-
-      if (field.value === '') {
-        returnFieldToStart(field, fieldWrapper, fieldMessage);
+        markFieldByState(field, isValid);
       }
     };
 
@@ -313,12 +312,12 @@
     };
 
     var onUsernameChange = function () {
-      switchFieldStatusByValidity(username, usernameWrapper, usernameMessage, isUsernameValid());
+      switchFieldStatusByValidity(username, isUsernameValid());
       switchButtonSubmitDisabledAttr();
     };
 
     var onEmailChange = function () {
-      switchFieldStatusByValidity(email, emailWrapper, emailMessage, isEmailValid());
+      switchFieldStatusByValidity(email, isEmailValid());
       switchButtonSubmitDisabledAttr();
     };
 

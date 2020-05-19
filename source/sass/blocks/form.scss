@@ -27,13 +27,8 @@
   order: 2;
 }
 
-.form__field input:focus {
-  margin-top: -9px;
-}
-
 .form__field input:focus ~ .form__input-title {
-  display: inline-block;
-  vertical-align: top;
+  opacity: 1;
 }
 
 .form__field input,
@@ -85,15 +80,20 @@
 }
 
 .form__input-title {
-  display: none;
+  display: inline-block;
   max-width: calc(100% - 40px);
-  margin: 0 20px;
+  margin: 0 20px -17px;
   padding: 0 4px;
   color: #e6e6e6;
   vertical-align: top;
   background-color: #1f1d1d;
   order: 1;
   z-index: 3;
+  opacity: 0;
+
+  &--visible {
+    opacity: 1;
+  }
 }
 
 .form__input-message {
