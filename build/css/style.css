@@ -864,7 +864,7 @@ img {
 
 @media (max-width: 767px) {
   .page-header__top {
-    padding: 19px 14px 4px;
+    padding: 19px 14px 16px 16px;
   }
 }
 
@@ -890,8 +890,13 @@ img {
 }
 
 @media (max-width: 767px) {
+  .logo {
+    width: 96px;
+    height: 38px;
+  }
+
   .logo img {
-    width: 100px;
+    width: 96px;
     height: 38px;
   }
 }

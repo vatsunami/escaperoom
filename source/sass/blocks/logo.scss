@@ -23,8 +23,11 @@
 
 @media (max-width: $mobile-width) {
   .logo {
+    width: 96px;
+    height: 38px;
+
     img {
-      width: 100px;
+      width: 96px;
       height: 38px;
     }
   }
