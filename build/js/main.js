@@ -375,7 +375,6 @@
 
   var form = document.querySelector('.modal-question__form');
 
-
   if (form) {
     var name = form.querySelector('[id=username]');
     var nameWrapper = name.parentNode;
@@ -411,7 +410,7 @@
       fieldMessage.classList.add('form__input-message-text--hidden');
     };
 
-    var checkAllFieldsValidity = function () {
+    var switchButtonDisabledAttr = function () {
       if (formFieldsValidationStatus.name &&
         formFieldsValidationStatus.email &&
         formFieldsValidationStatus.message &&
@@ -422,11 +421,7 @@
       }
     };
 
-    var onEulaChange = function () {
-      checkAllFieldsValidity();
-    };
-
-    var onNameChange = function () {
+    var checkNameValidity = function () {
       if (name.value.length > 2) {
         markFieldAsValid(name, nameWrapper, nameMessage);
         formFieldsValidationStatus.name = true;
@@ -439,10 +434,9 @@
         returnFieldToStart(name, nameWrapper, nameMessage);
         formFieldsValidationStatus.name = false;
       }
-      checkAllFieldsValidity();
     };
 
-    var onEmailChange = function () {
+    var checkEmailValidity = function () {
       if (email.validity.valid) {
         markFieldAsValid(email, emailWrapper, emailMessage);
         formFieldsValidationStatus.email = true;
@@ -455,16 +449,33 @@
         returnFieldToStart(email, emailWrapper, emailMessage);
         formFieldsValidationStatus.email = false;
       }
-      checkAllFieldsValidity();
     };
 
-    var onMessageChange = function () {
+    var checkMessageValidity = function () {
       if (message.value !== '') {
         formFieldsValidationStatus.message = true;
       } else {
         formFieldsValidationStatus.message = false;
       }
-      checkAllFieldsValidity();
+    };
+
+    var onEulaChange = function () {
+      switchButtonDisabledAttr();
+    };
+
+    var onNameChange = function () {
+      checkNameValidity();
+      switchButtonDisabledAttr();
+    };
+
+    var onEmailChange = function () {
+      checkEmailValidity();
+      switchButtonDisabledAttr();
+    };
+
+    var onMessageChange = function () {
+      checkMessageValidity();
+      switchButtonDisabledAttr();
     };
 
     name.addEventListener('change', onNameChange);
