@@ -38,6 +38,11 @@
 
 @media (max-width: $tablet-width) {
   .promo__container {
+    padding: 0;
+  }
+
+  .promo__info {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     padding: 25px 0;
@@ -65,8 +70,9 @@
     justify-content: flex-end;
   }
 
-  .promo__container {
-    padding: 64px 0;
+  .promo__info {
+    display: block;
+    padding: 32px 0 64px;
   }
 
   .promo h2 {

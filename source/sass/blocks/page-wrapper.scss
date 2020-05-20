@@ -123,7 +123,7 @@
 
 @media (max-width: $mobile-width) {
   .page-wrapper {
-    height: 100%;
+    height: auto;
     background-position: center top;
     background-size: cover;
 
@@ -150,6 +150,7 @@
     }
 
     &--promo {
+      height: 100%;
       background-image: url("../img/bg-main-mobile@1x.jpg");
       background-size: cover;
     }
