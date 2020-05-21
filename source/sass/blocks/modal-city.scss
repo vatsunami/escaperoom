@@ -1,7 +1,12 @@
-.modal-city__container {
+.modal-city {
+  top: calc(50% - 243px);
+  left: calc(50% - 240px);
   width: 480px;
-  max-height: 485px;
-  padding: 31px 32px 34px;
+  height: 485px;
+}
+
+.modal-city__container {
+  padding: 32px 32px 33px;
 }
 
 .modal-city__title {
@@ -105,9 +110,16 @@
 }
 
 @media (max-width: $mobile-width) {
-  .modal-city__container {
+  .modal-city {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
+  }
+
+  .modal-city__container {
     padding: 32px 16px 0;
   }
 

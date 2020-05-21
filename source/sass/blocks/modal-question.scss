@@ -1,10 +1,15 @@
+.modal-question {
+  top: calc(50% - 340px);
+  left: calc(50% - 240px);
+  width: 480px;
+  height: 682px;
+}
+
 .modal-question__container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 480px;
-  height: 682px;
-  padding: 32px 32px 34px;
+  padding: 32px 32px 35px;
   background-image: linear-gradient(0deg, #141414 0%, #1f1d1d 60.17%);
 }
 
@@ -15,6 +20,15 @@
 
 
 @media (max-width: $mobile-width) {
+  .modal-question {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+  }
+
   .modal-question__container {
     width: 100%;
     height: 100%;

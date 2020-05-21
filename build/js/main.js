@@ -92,16 +92,18 @@
   if (modal) {
     var container = modal.querySelector('.modal-city__container');
     var buttonOpen = document.querySelector('.menu__location');
-    var buttonClose = modal.querySelector('.modal__button-close');
+    var buttonClose = container.querySelector('.modal__button-close');
+    var overlay = document.querySelector('.overlay');
 
     var showModal = function () {
       document.body.classList.add('noscroll--modal-city');
       modal.classList.remove('modal--closed');
       pageHeader.classList.add('page-header--modal-opened');
+      overlay.classList.remove('overlay--hidden');
       buttonClose.focus();
       buttonOpen.removeEventListener('click', onButtonOpenClick);
       buttonClose.addEventListener('click', onButtonCloseClick);
-      modal.addEventListener('click', onOverlayClick);
+      overlay.addEventListener('click', onOverlayClick);
       document.addEventListener('keydown', onEscPress);
     };
 
@@ -109,25 +111,16 @@
       document.body.classList.remove('noscroll--modal-city');
       modal.classList.add('modal--closed');
       pageHeader.classList.remove('page-header--modal-opened');
+      overlay.classList.add('overlay--hidden');
       buttonOpen.focus();
       buttonOpen.addEventListener('click', onButtonOpenClick);
       buttonClose.removeEventListener('click', onButtonCloseClick);
-      modal.removeEventListener('click', onOverlayClick);
+      overlay.addEventListener('click', onOverlayClick);
       document.removeEventListener('keydown', onEscPress);
     };
 
-    var onOverlayClick = function (evt) {
-      var clickCoordinates = {
-        x: evt.clientX,
-        y: evt.clientY
-      };
-
-      if (clickCoordinates.x < container.offsetLeft ||
-        clickCoordinates.x > container.offsetLeft + container.offsetWidth ||
-        clickCoordinates.y < container.offsetTop ||
-        clickCoordinates.y > container.offsetTop + container.offsetHeight) {
-        hideModal();
-      }
+    var onOverlayClick = function () {
+      hideModal();
     };
 
     var onEscPress = function (evt) {
@@ -159,9 +152,10 @@
     var pageHeader = document.querySelector('.page-header');
     var container = modal.querySelector('.modal-question__container');
     var buttonOpen = document.querySelector('.question');
-    var buttonClose = modal.querySelector('.modal__button-close');
+    var buttonClose = container.querySelector('.modal__button-close');
+    var overlay = document.querySelector('.overlay');
 
-    var form = modal.querySelector('.form');
+    var form = container.querySelector('.form');
     var username = form.querySelector('[id=username]');
     var email = form.querySelector('[id=email]');
     var message = form.querySelector('[id=message]');
@@ -181,10 +175,11 @@
       document.body.classList.add('noscroll--modal-question');
       pageHeader.classList.add('page-header--modal-opened');
       modal.classList.remove('modal--closed');
+      overlay.classList.remove('overlay--hidden');
       username.focus();
       buttonOpen.removeEventListener('click', onButtonOpenClick);
       buttonClose.addEventListener('click', onButtonCloseClick);
-      modal.addEventListener('click', onOverlayClick);
+      overlay.addEventListener('click', onOverlayClick);
       document.addEventListener('keydown', onEscPress);
 
       if (isStorageSupport && storage) {
@@ -201,10 +196,11 @@
       document.body.classList.remove('noscroll--modal-question');
       pageHeader.classList.remove('page-header--modal-opened');
       modal.classList.add('modal--closed');
+      overlay.classList.add('overlay--hidden');
       buttonOpen.focus();
       buttonOpen.addEventListener('click', onButtonOpenClick);
       buttonClose.removeEventListener('click', onButtonCloseClick);
-      modal.removeEventListener('click', onOverlayClick);
+      overlay.removeEventListener('click', onOverlayClick);
       document.removeEventListener('keydown', onEscPress);
     };
 
@@ -273,22 +269,8 @@
       }
     };
 
-    var onOverlayClick = function (evt) {
-      var target = evt.target;
-
-      var clickCoordinates = {
-        x: evt.clientX,
-        y: evt.clientY
-      };
-
-      if (target !== eula) {
-        if (clickCoordinates.x < container.offsetLeft ||
-          clickCoordinates.x > container.offsetLeft + container.offsetWidth ||
-          clickCoordinates.y < container.offsetTop ||
-          clickCoordinates.y > container.offsetTop + container.offsetHeight) {
-          hideModal();
-        }
-      }
+    var onOverlayClick = function () {
+      hideModal();
     };
 
     var onEscPress = function (evt) {

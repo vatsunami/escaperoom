@@ -4,13 +4,7 @@
   right: 0;
   left: 0;
   bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  background-color: rgba(61, 51, 51, 0.96);
+  z-index: 200;
 
   &--closed {
     display: none;
@@ -40,7 +34,10 @@
 
 @media (max-width: $mobile-width) {
   .modal {
-    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     overflow-y: scroll;
     background-image: linear-gradient(0deg, #141414 0%, #1f1d1d 100%);
 
