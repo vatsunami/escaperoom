@@ -1948,7 +1948,12 @@ img {
   background-color: #f2890f;
   border-radius: 47px;
   border: 0;
+  outline: none;
   cursor: pointer;
+}
+
+.form__button:hover, .form__button:focus {
+  background-color: #f39425;
 }
 
 .form__button:disabled {
@@ -1981,7 +1986,8 @@ img {
   opacity: 0.4;
 }
 
-.form__eula input:focus ~ label::before {
+.form__eula input:focus ~ label::before,
+.form__eula input:focus:checked ~ label::before {
   opacity: 0.8;
 }
 
@@ -2822,6 +2828,8 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -2837,6 +2845,8 @@ img {
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
   padding: 0 12px;
 }
 

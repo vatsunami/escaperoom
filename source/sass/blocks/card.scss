@@ -94,6 +94,7 @@
 
 .card__parameters-list {
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -104,6 +105,7 @@
   position: relative;
   display: flex;
   align-items: flex-start;
+  flex-shrink: 0;
   padding: 0 12px;
 
   &:not(:last-of-type) {

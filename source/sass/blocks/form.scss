@@ -144,7 +144,13 @@
   background-color: $color-orange;
   border-radius: 47px;
   border: 0;
+  outline: none;
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $color-button-hover;
+  }
 
   &:disabled {
     background-color: $color-disabled;
@@ -176,7 +182,8 @@
   }
 }
 
-.form__eula input:focus ~ label::before {
+.form__eula input:focus ~ label::before,
+.form__eula input:focus:checked ~ label::before {
   opacity: 0.8;
 }
 
