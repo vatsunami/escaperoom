@@ -38,6 +38,10 @@
   padding: 19px 0 18px 46px;
   width: 448px;
   min-height: 104px;
+
+  &--hidden {
+    display: none;
+  }
 }
 
 .reservation__purchase-info {
@@ -89,6 +93,10 @@
   width: 100%;
   padding: 33px 46px 33px;
   border-top: 0.5px solid rgba(230, 230, 230, 0.25);
+
+  &--hidden {
+    display: none;
+  }
 }
 
 .reservation__date {

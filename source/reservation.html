@@ -84,7 +84,7 @@
               <p class="reservation__category overhead">хоррор, триллер</p>
               <h2 class="reservation__title title title--large">Маньяк</h2>
             </div>
-            <div class="reservation__purchase">
+            <div class="reservation__purchase reservation__purchase--hidden">
               <p class="reservation__purchase-info">Вы выбрали игру 22&nbsp;марта в 16:00. К&nbsp;оплате 1500 рублей.</p>
               <a class="reservation__purchase-buy" href="#">Перейти к оплате</a>
             </div>
@@ -92,12 +92,15 @@
               <div class="reservation__date">
                 <label class="visually-hidden" for="day">День</label>
                 <select class="reservation__date-select select" name="day" id="day">
-                  <option>Выберите дату</option>
+                  <option value="default">Выберите дату</option>
+                  <option value="22.03.2020">22 марта</option>
+                  <option value="23.03.2020">23 марта</option>
                 </select>
-                <span class="reservation__date-day">22 марта</span>
+                <!-- <span class="reservation__date-day">22 марта</span> -->
+                <span class="reservation__date-day"></span>
               </div>
 
-              <div class="reservation__time time">
+              <div class="reservation__time time time--hidden">
                 <ul class="time__states">
                   <li class="time__state">
                     <span class="time__state-color"> — свободно</span>
@@ -149,7 +152,7 @@
                   <!-- Выбрано -->
 
                   <li class="time__item">
-                    <input class="time__input visually-hidden" type="radio" id="time-6" value="16:00" name="time" checked>
+                    <input class="time__input visually-hidden" type="radio" id="time-6" value="16:00" name="time">
                     <label class="time__label" for="time-6">16:00</label>
                     <span class="time__price">1500 ₽</span>
                   </li>

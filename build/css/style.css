@@ -2999,6 +2999,10 @@ img {
   min-height: 104px;
 }
 
+.reservation__purchase--hidden {
+  display: none;
+}
+
 .reservation__purchase-info {
   padding-right: 97px;
   width: 165px;
@@ -3051,6 +3055,10 @@ img {
   width: 100%;
   padding: 33px 46px 33px;
   border-top: 0.5px solid rgba(230, 230, 230, 0.25);
+}
+
+.reservation__body--hidden {
+  display: none;
 }
 
 .reservation__date {
@@ -3239,6 +3247,14 @@ img {
   .reservation__date-select {
     margin: 4px 16px 0 0;
   }
+}
+
+.time {
+  display: block;
+}
+
+.time--hidden {
+  display: none;
 }
 
 .time__states {

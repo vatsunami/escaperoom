@@ -476,3 +476,67 @@
     };
   }
 })();
+
+
+(function questReservation() {
+  var reservation = document.querySelector('.reservation');
+
+  if (reservation) {
+    var purchase = reservation.querySelector('.reservation__purchase');
+    var purchaseInfoOutput = reservation.querySelector('.reservation__purchase-info');
+    var body = reservation.querySelector('.reservation__body');
+    var select = body.querySelector('.reservation__date-select');
+    var dayOutput = body.querySelector('.reservation__date-day');
+    var timetable = body.querySelector('.reservation__time');
+
+    var reservationData = {
+      day: '',
+      time: '',
+      price: ''
+    };
+
+    var returnToStart = function () {
+      var checkedRadioButton = timetable.querySelector('.time__input:checked');
+
+      if (checkedRadioButton) {
+        checkedRadioButton.checked = false;
+      }
+
+      timetable.classList.add('time--hidden');
+      purchase.classList.add('reservation__purchase--hidden');
+      purchaseInfoOutput.innerHTML = '';
+      reservationData.day = '';
+      reservationData.time = '';
+      reservationData.price = '';
+    };
+
+    var onTimetableChange = function (evt) {
+      var target = evt.target;
+      var wrapper = target.parentNode;
+      var price = wrapper.querySelector('.time__price');
+
+      reservationData.time = target.value;
+      reservationData.price = price.textContent;
+
+      fillPurchaseInfo();
+      purchase.classList.remove('reservation__purchase--hidden');
+    };
+
+    var fillPurchaseInfo = function () {
+      var info = 'Вы выбрали игру ' + reservationData.day + ' в ' + reservationData.time +
+        '. К оплате ' + reservationData.price + ' рублей.';
+      purchaseInfoOutput.innerHTML = info;
+    };
+
+    select.addEventListener('change', function (evt) {
+      if (evt.target.value !== 'default') {
+        returnToStart();
+        reservationData.day = select.options[select.selectedIndex].text;
+        dayOutput.innerHTML = reservationData.day;
+        timetable.classList.remove('time--hidden');
+        timetable.addEventListener('change', onTimetableChange);
+      }
+      select.value = 'default';
+    });
+  }
+})();
