@@ -6,17 +6,11 @@
   width: 140px;
 }
 
-.location__icon {
-  flex-shrink: 0;
-  margin-right: 8px;
-}
-
 .location__city {
   box-sizing: border-box;
   display: block;
   align-self: flex-start;
-  padding-top: 4px;
-  padding-bottom: 4px;
+  padding: 4px 0 4px 24px;
   font-family: $raleway-bold;
   font-size: 12px;
   font-weight: 700;
@@ -26,6 +20,10 @@
   color: $color-orange;
   text-transform: uppercase;
   text-decoration: none;
+  background-image: url("../img/icon-location.svg");
+  background-repeat: no-repeat;
+  background-size: 16px 21px;
+  background-position: 0 0;
   cursor: pointer;
 
   &:hover,
@@ -37,8 +35,8 @@
       box-sizing: border-box;
       position: absolute;
       bottom: 0;
-      left: 0;
-      width: 100%;
+      left: 24px;
+      width: calc(100% - 24px);
       height: 1px;
       border-bottom: 1px dashed $color-orange;
     }
