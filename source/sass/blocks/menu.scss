@@ -22,6 +22,13 @@
   margin-right: 24px;
 }
 
+.menu__tel {
+  display: flex;
+  flex-wrap: wrap;
+  width: 129px;
+  flex-shrink: 0;
+}
+
 @media (max-width: $tablet-width) {
   .menu {
     flex-direction: column;
@@ -46,7 +53,7 @@
     position: relative;
     flex-direction: column;
     width: 100%;
-    padding: 14px 20px 40px;
+    padding: 21px 20px 35px;
     align-items: center;
     order: 0;
 
@@ -63,16 +70,10 @@
   }
 
   .menu__location {
-    margin: 0 0 20px;
+    margin: 0 0 15px;
   }
 
   .menu__tel {
     margin: 0 auto;
-  }
-}
-
-@media (max-width: $tablet-width) {
-  .menu__info {
-    padding: 21px 20px 40px;
   }
 }

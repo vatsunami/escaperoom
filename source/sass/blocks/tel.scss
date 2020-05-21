@@ -1,6 +1,6 @@
 .tel {
   width: 129px;
-  padding-top: 4px;
+  padding: 4px 0;
   font-family: $raleway-semibold;
   font-size: 14px;
   line-height: 15px;
@@ -22,7 +22,6 @@
 
 @media (max-width: $tablet-width) {
   .tel {
-    padding-top: 0;
-    padding-left: 6px;
+    padding: 5px 0 5px 3px;
   }
 }
