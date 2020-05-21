@@ -436,7 +436,9 @@ img {
 }
 
 .noscroll--header-menu, .noscroll--modal-question, .noscroll--modal-city {
-  overflow-y: hidden;
+  width: 100%;
+  position: fixed;
+  overflow-y: scroll;
 }
 
 .button {
@@ -837,6 +839,13 @@ img {
     position: fixed;
     top: 0;
     left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     background-image: linear-gradient(163.84deg, #633c0f -68.98%, #24150e 75.12%, #1a140d 132.97%);
@@ -865,7 +874,10 @@ img {
   }
 
   .page-header__container--opened {
-    height: 100%;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
     min-height: auto;
     overflow-y: scroll;
   }
@@ -3354,14 +3366,14 @@ img {
 
 .time__input:focus ~ .time__label,
 .time__input:checked ~ .time__label {
-  padding: 9px 0 6px;
+  padding: 8px 0 7px;
   border: none;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#2cdb52), to(#13ba19));
   background-image: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
 }
 
 .time__input:disabled ~ .time__label {
-  padding: 9px 0 6px;
+  padding: 8px 0 7px;
   border: none;
   background-image: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
 }
@@ -3374,7 +3386,7 @@ img {
 .time__label {
   width: 110px;
   margin-bottom: 4px;
-  padding: 7px 0 4px;
+  padding: 6px 0 5px;
   font-family: "Raleway Bold", "Arial", sans-serif;
   font-weight: bold;
   font-size: 16px;

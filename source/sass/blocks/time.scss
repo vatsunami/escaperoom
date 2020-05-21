@@ -98,13 +98,13 @@
 
 .time__input:focus ~ .time__label,
 .time__input:checked ~ .time__label {
-  padding: 9px 0 6px;
+  padding: 8px 0 7px;
   border: none;
   background-image: linear-gradient(180deg, #2cdb52 0%, #13ba19 100%);
 }
 
 .time__input:disabled ~ .time__label {
-  padding: 9px 0 6px;
+  padding: 8px 0 7px;
   border: none;
   background-image: linear-gradient(158.6deg, #f2890f 9.78%, #b8600f 79.81%);
 
@@ -117,7 +117,7 @@
 .time__label {
   width: 110px;
   margin-bottom: 4px;
-  padding: 7px 0 4px;
+  padding: 6px 0 5px;
   font-family: $raleway-bold;
   font-weight: bold;
   font-size: 16px;

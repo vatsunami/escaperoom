@@ -2,6 +2,8 @@
   &--header-menu,
   &--modal-question,
   &--modal-city {
-    overflow-y: hidden;
+    width: 100%;
+    position: fixed;
+    overflow-y: scroll;
   }
 }

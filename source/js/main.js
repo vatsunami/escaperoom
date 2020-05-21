@@ -21,7 +21,6 @@
     var mainNav = menu.querySelector('.main-nav');
     var telNumber = menu.querySelector('.tel');
     var location = menu.querySelector('.location');
-    var pageFooter = document.querySelector('.page-footer');
 
     var openMenu = function () {
       document.body.classList.add('noscroll--header-menu');
@@ -34,10 +33,6 @@
       mainNav.classList.remove('main-nav--closed');
       telNumber.classList.remove('tel--closed');
       location.classList.remove('location--closed');
-
-      if (pageFooter) {
-        pageFooter.classList.add('page-footer--show');
-      }
     };
 
     var closeMenu = function () {
@@ -51,10 +46,6 @@
       mainNav.classList.add('main-nav--closed');
       telNumber.classList.add('tel--closed');
       location.classList.add('location--closed');
-
-      if (pageFooter) {
-        pageFooter.classList.remove('page-footer--show');
-      }
     };
 
     menuButton.addEventListener('click', function () {
@@ -524,7 +515,7 @@
 
     var fillPurchaseInfo = function () {
       var info = 'Вы выбрали игру ' + reservationData.day + ' в ' + reservationData.time +
-        '. К оплате ' + reservationData.price + ' рублей.';
+        '. К&nbsp;оплате ' + reservationData.price.slice(0, -2) + ' рублей.';
       purchaseInfoOutput.innerHTML = info;
     };
 
