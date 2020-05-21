@@ -1,8 +1,5 @@
 .promo {
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   flex-grow: 1;
   width: 100%;
 }
@@ -12,7 +9,7 @@
   width: 100%;
   max-width: 1366px;
   margin: 0 auto;
-  padding: 0 136px 87px;
+  padding: 89px 136px;
 }
 
 .promo h2 {
@@ -38,13 +35,11 @@
 
 @media (max-width: $tablet-width) {
   .promo__container {
-    padding: 0;
+    padding: 300px 0 0;
   }
 
   .promo__info {
     box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
     padding: 25px 0;
   }
 
@@ -66,8 +61,8 @@
 }
 
 @media (max-width: $mobile-width) {
-  .promo {
-    justify-content: flex-end;
+  .promo__container {
+    padding-top: 308px;
   }
 
   .promo__info {
