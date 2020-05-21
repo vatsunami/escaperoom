@@ -72,6 +72,7 @@
   background-repeat: no-repeat;
   background-position: 6px 5px;
   outline: none;
+  z-index: 2;
 
   &:hover,
   &:focus {
@@ -132,6 +133,7 @@
   position: relative;
   display: block;
   padding-bottom: 5px;
+  z-index: 1;
 
   &--active {
     &::after {

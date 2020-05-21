@@ -2552,6 +2552,7 @@ img {
   background-repeat: no-repeat;
   background-position: 6px 5px;
   outline: none;
+  z-index: 2;
 }
 
 .catalog-category__link:hover, .catalog-category__link:focus {
@@ -2607,6 +2608,7 @@ img {
   position: relative;
   display: block;
   padding-bottom: 5px;
+  z-index: 1;
 }
 
 .catalog-category__link-text--active::after {

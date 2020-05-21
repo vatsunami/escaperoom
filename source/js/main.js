@@ -444,3 +444,35 @@
   }
 
 })();
+
+
+(function categoryTabs() {
+  var categoryList = document.querySelector('.catalog-category__list');
+
+  if (categoryList) {
+    var tabs = categoryList.querySelectorAll('.catalog-category__link');
+    var tabsArray = [].slice.call(tabs);
+    var activeTabIndex = 0;
+
+    tabsArray.forEach(function (element) {
+      element.addEventListener('click', function () {
+        activeTabIndex = tabsArray.indexOf(element);
+        switchActiveTab();
+      });
+    });
+
+    var switchActiveTab = function () {
+      tabsArray.forEach(function (element, index) {
+        var text = element.querySelector('.catalog-category__link-text');
+
+        if (index !== activeTabIndex) {
+          element.classList.remove('catalog-category__link--active');
+          text.classList.remove('catalog-category__link-text--active');
+        } else {
+          element.classList.add('catalog-category__link--active');
+          text.classList.add('catalog-category__link-text--active');
+        }
+      });
+    };
+  }
+})();
