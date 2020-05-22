@@ -236,16 +236,8 @@
       }
     };
 
-    var isAllFormFieldsValid = function () {
-      if (isUsernameValid() && isEmailValid() && message.value !== '') {
-        return true;
-      } else {
-        return false;
-      }
-    };
-
     var switchButtonSubmitDisabledAttr = function () {
-      if (isAllFormFieldsValid() && eula.checked) {
+      if (email.value !== '' && name.value !== '' && message.value !== '' && eula.checked) {
         buttonSubmit.disabled = false;
       } else {
         buttonSubmit.disabled = true;
@@ -298,7 +290,13 @@
       switchButtonSubmitDisabledAttr();
     };
 
-    var onFormSubmit = function () {
+    var onFormSubmit = function (evt) {
+      evt.preventDefault();
+
+      if (isUsernameValid() && isEmailValid() && message.value !== '') {
+        form.submit();
+      }
+
       if (isStorageSupport) {
         localStorage.setItem('username', username.value);
         localStorage.setItem('email', email.value);
