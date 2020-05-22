@@ -9,6 +9,12 @@
 
 .reservation__title {
   margin: 0;
+  font-family: $raleway-black;
+  font-weight: 900;
+  font-size: 92px;
+  line-height: 87px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
 }
 
 .reservation__overhead {
@@ -154,27 +160,8 @@
 
 @media (max-width: $tablet-width) {
   .reservation__container {
-    padding: 27px 40px 0;
-  }
-
-  .reservation__body {
-    padding: 33px 20px;
-  }
-
-  .reservation__title {
-    font-size: 46px;
-    line-height: 55px;
-  }
-}
-
-@media (max-width: $tablet-width) {
-  .reservation__container {
     display: block;
     padding: 7px 30px 0;
-  }
-
-  .reservation__body {
-    padding: 33px 46px;
   }
 
   .reservation__header {
@@ -185,11 +172,16 @@
     padding: 0;
   }
 
+  .reservation__body {
+    padding: 33px 46px;
+  }
+
   .reservation__title {
     font-size: 42px;
     line-height: 46px;
   }
 }
+
 
 @media (max-width: $mobile-width) {
   .reservation__container {

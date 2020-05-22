@@ -38,6 +38,7 @@
 }
 
 .promo-quest__category {
+  display: block;
   margin: 0;
   margin-bottom: 11px;
 
@@ -47,7 +48,6 @@
 }
 
 .promo-quest__title {
-  margin: 0;
   margin-bottom: 28px;
 
   &--long {
@@ -55,12 +55,22 @@
   }
 }
 
+.promo-quest h2 {
+  margin: 0;
+  font-family: $raleway-black;
+  font-weight: 900;
+  font-size: 92px;
+  line-height: 87px;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
 .promo-quest__parameters {
   margin-bottom: 18px;
   padding-left: 9px;
 }
 
-.promo-quest__description {
+.promo-quest p {
   box-sizing: border-box;
   max-width: 570px;
   margin: 0;
@@ -89,8 +99,8 @@
   }
 
   .promo-quest__category,
-  .promo-quest__title,
-  .promo-quest__description {
+  .promo-quest h2,
+  .promo-quest p {
     padding: 0;
   }
 
@@ -103,11 +113,6 @@
   .promo-quest__title {
     max-width: 540px;
     margin-bottom: 17px;
-    font-family: $raleway-black;
-    font-weight: 900;
-    font-size: 67px;
-    line-height: 80px;
-    letter-spacing: normal;
 
     &--long {
       margin-top: 0;
@@ -118,11 +123,19 @@
     }
   }
 
+  .promo-quest h2 {
+    font-family: $raleway-black;
+    font-weight: 900;
+    font-size: 67px;
+    line-height: 80px;
+    letter-spacing: normal;
+  }
+
   .promo-quest__parameters {
     padding: 0;
   }
 
-  .promo-quest__description {
+  .promo-quest p {
     max-width: none;
     padding-right: 60px;
   }
@@ -145,44 +158,46 @@
   }
 
   .promo-quest__container {
-    padding: 7px 0 0;
+    padding: 14px 0 0;
   }
 
   .promo-quest__info {
     max-width: 500px;
     margin: 0;
-    padding: 285px 0 38px;
+    padding: 278px 0 38px;
 
     &--long-title {
-      padding-top: 178px;
+      padding-top: 171px;
     }
 
     &--no-catalog {
-      padding-top: 287px;
+      padding-top: 280px;
     }
   }
 
   .promo-quest__category,
-  .promo-quest__title,
-  .promo-quest__description {
+  .promo-quest h2,
+  .promo-quest p {
     box-sizing: border-box;
     padding: 0 16px;
   }
 
   .promo-quest__title {
-    font-size: 42px;
-    line-height: 46px;
-
     &--stairs {
       max-width: 350px;
     }
+  }
+
+  .promo-quest h2 {
+    font-size: 42px;
+    line-height: 46px;
   }
 
   .promo-quest__parameters {
     margin: 0;
   }
 
-  .promo-quest__description {
+  .promo-quest p {
     margin-bottom: 19px;
   }
 
