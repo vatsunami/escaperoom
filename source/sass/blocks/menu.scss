@@ -22,9 +22,7 @@
   margin-right: 24px;
 }
 
-.menu__tel {
-  display: flex;
-  flex-wrap: wrap;
+.menu__phones {
   width: 129px;
   flex-shrink: 0;
 }
@@ -73,7 +71,7 @@
     margin: 0 0 15px;
   }
 
-  .menu__tel {
+  .menu__phones {
     margin: 0 auto;
   }
 }

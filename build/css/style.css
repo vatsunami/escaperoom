@@ -1007,12 +1007,7 @@ img {
   margin-right: 24px;
 }
 
-.menu__tel {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
+.menu__phones {
   width: 129px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -1077,7 +1072,7 @@ img {
     margin: 0 0 15px;
   }
 
-  .menu__tel {
+  .menu__phones {
     margin: 0 auto;
   }
 }
@@ -1227,8 +1222,23 @@ img {
   }
 }
 
-.tel {
+.phones {
   width: 129px;
+}
+
+.phones__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phones__number {
+  display: block;
   padding: 4px 0;
   font-family: "Raleway SemiBold", "Arial", sans-serif;
   font-size: 14px;
@@ -1241,16 +1251,16 @@ img {
   outline: none;
 }
 
-.tel:hover, .tel:focus {
+.phones__number:hover, .phones__number:focus {
   opacity: 0.7;
 }
 
-.tel:active {
+.phones__number:active {
   opacity: 0.4;
 }
 
 @media (max-width: 1023px) {
-  .tel {
+  .phones__number {
     padding: 5px 0 5px 3px;
   }
 }

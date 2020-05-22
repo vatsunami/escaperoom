@@ -1,5 +1,17 @@
-.tel {
+.phones {
   width: 129px;
+}
+
+.phones__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.phones__number {
+  display: block;
   padding: 4px 0;
   font-family: $raleway-semibold;
   font-size: 14px;
@@ -21,7 +33,7 @@
 }
 
 @media (max-width: $tablet-width) {
-  .tel {
+  .phones__number {
     padding: 5px 0 5px 3px;
   }
 }
