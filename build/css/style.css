@@ -874,12 +874,13 @@ img {
   }
 
   .page-header__container--opened {
-    width: 100%;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1;
+    width: 100%;
     min-height: auto;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
   }
 
   .page-header__top {
@@ -1548,6 +1549,7 @@ img {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
     background-image: -webkit-gradient(linear, left bottom, left top, from(#141414), to(#1f1d1d));
     background-image: linear-gradient(0deg, #141414 0%, #1f1d1d 100%);
   }
@@ -2037,6 +2039,7 @@ img {
   height: 100%;
   overflow-y: scroll;
   -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
 }
 

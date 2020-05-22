@@ -52,10 +52,11 @@
     }
 
     &--opened {
-      width: 100%;
       flex-grow: 1;
+      width: 100%;
       min-height: auto;
       overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
     }
   }
 
