@@ -19,8 +19,6 @@
     var menuButton = container.querySelector('.menu-button');
     var menu = container.querySelector('.menu');
     var mainNav = menu.querySelector('.main-nav');
-    var telNumber = menu.querySelector('.tel');
-    var location = menu.querySelector('.location');
 
     var openMenu = function () {
       document.body.classList.add('noscroll--header-menu');
@@ -31,8 +29,6 @@
       menu.classList.remove('menu--closed');
       menuButton.classList.remove('menu-button--closed');
       mainNav.classList.remove('main-nav--closed');
-      telNumber.classList.remove('tel--closed');
-      location.classList.remove('location--closed');
     };
 
     var closeMenu = function () {
@@ -44,8 +40,6 @@
       menu.classList.add('menu--closed');
       menuButton.classList.add('menu-button--closed');
       mainNav.classList.add('main-nav--closed');
-      telNumber.classList.add('tel--closed');
-      location.classList.add('location--closed');
     };
 
     menuButton.addEventListener('click', function () {
@@ -471,12 +465,9 @@
   var reservation = document.querySelector('.reservation');
 
   if (reservation) {
-    var purchase = reservation.querySelector('.reservation__purchase');
-    var purchaseInfoOutput = reservation.querySelector('.reservation__purchase-info');
-    var body = reservation.querySelector('.reservation__body');
-    var select = body.querySelector('.reservation__date-select');
-    var dayOutput = body.querySelector('.reservation__date-day');
-    var timetable = body.querySelector('.reservation__time');
+    var ESC_KEYCODE = 27;
+    var ENTER_KEYCODE = 13;
+    var SPACE_KEYCODE = 32;
 
     var reservationData = {
       day: '',
@@ -484,20 +475,35 @@
       price: ''
     };
 
-    var returnToStart = function () {
-      var checkedRadioButton = timetable.querySelector('.time__input:checked');
+    var purchase = reservation.querySelector('.reservation__purchase');
+    var purchaseInfoOutput = reservation.querySelector('.reservation__purchase-info');
+    var body = reservation.querySelector('.reservation__body');
 
-      if (checkedRadioButton) {
-        checkedRadioButton.checked = false;
+    var select = body.querySelector('.reservation__date-select');
+    var selectButton = select.querySelector('.select__button');
+    var selectList = select.querySelector('.select__list');
+    var selectOptions = selectList.querySelectorAll('.select__option');
+    var selectOptionsArray = [].slice.call(selectOptions);
+
+    var dayOutput = body.querySelector('.reservation__date-day');
+    var timetable = body.querySelector('.reservation__time');
+
+    var returnToStart = function () {
+      var checkedTime = timetable.querySelector('.time__input:checked');
+
+      if (checkedTime) {
+        checkedTime.checked = false;
       }
 
       timetable.classList.add('time--hidden');
       purchase.classList.add('reservation__purchase--hidden');
       purchaseInfoOutput.innerHTML = '';
+      dayOutput.innerHTML = '';
       reservationData.day = '';
       reservationData.time = '';
       reservationData.price = '';
     };
+
 
     var onTimetableChange = function (evt) {
       var target = evt.target;
@@ -511,21 +517,118 @@
       purchase.classList.remove('reservation__purchase--hidden');
     };
 
+
     var fillPurchaseInfo = function () {
       var info = 'Вы выбрали игру ' + reservationData.day + ' в ' + reservationData.time +
         '. К&nbsp;оплате ' + reservationData.price.slice(0, -2) + ' рублей.';
       purchaseInfoOutput.innerHTML = info;
     };
 
-    select.addEventListener('change', function (evt) {
-      if (evt.target.value !== 'default') {
+
+    var showSelectList = function () {
+      document.body.classList.add('noscroll--select');
+      selectButton.classList.add('select__button--opened');
+      selectList.classList.remove('select__list--closed');
+    };
+
+
+    var hideSelectList = function () {
+      document.body.classList.remove('noscroll--select');
+      selectButton.classList.remove('select__button--opened');
+      selectList.classList.add('select__list--closed');
+    };
+
+
+    var switchPageState = function (optionText) {
+      if (optionText === 'Не выбрано') {
         returnToStart();
-        reservationData.day = select.options[select.selectedIndex].text;
+      } else {
+        reservationData.day = optionText;
         dayOutput.innerHTML = reservationData.day;
         timetable.classList.remove('time--hidden');
         timetable.addEventListener('change', onTimetableChange);
       }
-      select.value = 'default';
-    });
+      hideSelectList();
+    };
+
+
+    var onSelectListClick = function (evt) {
+      var target = evt.target;
+
+      if (isOption(target)) {
+        var optionText = target.textContent;
+        switchPageState(optionText);
+      }
+    };
+
+
+    var onSelectListKeyPress = function (evt) {
+      var target = evt.target;
+
+      if (evt.keyCode === ENTER_KEYCODE || evt.keyCode === SPACE_KEYCODE) {
+        if (isOption(target)) {
+          var optionText = target.textContent;
+          switchPageState(optionText);
+        }
+      }
+    };
+
+
+    var onDocumentFocusIn = function () {
+      var focusedElement = document.activeElement;
+
+      if (!isOption(focusedElement) && focusedElement !== selectButton) {
+        hideSelectList();
+        document.removeEventListener('focusin', onDocumentFocusIn);
+      }
+    };
+
+
+    var isOption = function (target) {
+      return selectOptionsArray.some(function (item) {
+        return item === target;
+      });
+    };
+
+
+    var onEscPress = function (evt) {
+      if (evt.keyCode === ESC_KEYCODE) {
+        hideSelectList();
+      }
+
+      document.removeEventListener('keydown', onEscPress);
+    };
+
+
+    var onDocumentClick = function (evt) {
+      var target = evt.target;
+
+      if (target !== select && target !== selectButton &&
+        !isOption(target) && target !== selectList) {
+        hideSelectList();
+        document.removeEventListener('click', onDocumentClick);
+      }
+    };
+
+
+    var onSelectButtonClick = function () {
+      if (selectList.classList.contains('select__list--closed')) {
+        showSelectList();
+        selectList.addEventListener('click', onSelectListClick);
+        document.addEventListener('focusin', onDocumentFocusIn);
+        document.addEventListener('keydown', onEscPress);
+        document.addEventListener('click', onDocumentClick);
+        selectList.addEventListener('keypress', onSelectListKeyPress);
+      } else {
+        hideSelectList();
+        selectList.removeEventListener('click', onSelectListClick);
+        document.removeEventListener('focusin', onDocumentFocusIn);
+        document.removeEventListener('click', onDocumentClick);
+        document.removeEventListener('keydown', onEscPress);
+        selectList.removeEventListener('keypress', onSelectListKeyPress);
+      }
+    };
+
+    selectButton.addEventListener('click', onSelectButtonClick);
   }
 })();

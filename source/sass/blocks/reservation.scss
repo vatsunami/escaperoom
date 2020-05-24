@@ -113,38 +113,8 @@
 }
 
 .reservation__date-select {
-  box-sizing: border-box;
-  width: 120px;
-  height: 36px;
-  margin: 2px 23px 0 0;
-  padding: 0;
-  font-family: $raleway-medium;
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 22px;
-  color: #ffffff;
-  font-feature-settings: "pnum" on, "lnum" on;
-  text-align: left;
-  border: none;
-  background-image: url("../img/icon-triangle.svg");
-  background-repeat: no-repeat;
-  background-size: 5px 7px;
-  background-position: top 14px right 1px;
-  background-color: transparent;
-  border-bottom: 2px solid $color-orange;
-  border-radius: 0;
-  appearance: none;
-  cursor: pointer;
-  outline: none;
-
-  &:hover,
-  &:focus {
-    opacity: 0.7;
-  }
-
-  &:active {
-    opacity: 0.4;
-  }
+  margin-right: 23px;
+  margin-top: 2px;
 }
 
 .reservation__date-select::-ms-expand {
