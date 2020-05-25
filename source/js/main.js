@@ -475,6 +475,8 @@
       price: ''
     };
 
+    var indexOfActiveOption = 0;
+
     var purchase = reservation.querySelector('.reservation__purchase');
     var purchaseInfoOutput = reservation.querySelector('.reservation__purchase-info');
     var body = reservation.querySelector('.reservation__body');
@@ -529,6 +531,7 @@
       document.body.classList.add('noscroll--select');
       selectButton.classList.add('select__button--opened');
       selectList.classList.remove('select__list--closed');
+      selectOptionsArray[indexOfActiveOption].focus();
     };
 
 
@@ -556,6 +559,7 @@
       var target = evt.target;
 
       if (isOption(target)) {
+        indexOfActiveOption = selectOptionsArray.indexOf(target);
         var optionText = target.textContent;
         switchPageState(optionText);
       }
@@ -567,6 +571,7 @@
 
       if (evt.keyCode === ENTER_KEYCODE || evt.keyCode === SPACE_KEYCODE) {
         if (isOption(target)) {
+          indexOfActiveOption = selectOptionsArray.indexOf(target);
           var optionText = target.textContent;
           switchPageState(optionText);
         }

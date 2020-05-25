@@ -541,6 +541,7 @@ img {
     background-repeat: no-repeat;
     background-position: 4px 2px;
     background-size: 9px 12px;
+    outline: none;
   }
 
   .button-back:hover, .button-back:focus {
@@ -3153,6 +3154,8 @@ img {
   }
 
   .reservation__button-back {
+    -ms-flex-item-align: start;
+    align-self: flex-start;
     margin-bottom: 30px;
   }
 
